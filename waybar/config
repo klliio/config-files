@@ -68,7 +68,8 @@
 		"format-muted":"<span color=\"#f38ba8\">󰸈</span> Muted",
 		"format-icons":["󰕿","󰖀","󰕾"],
 		"scroll-step": 1,
-		"on-click": "pavucontrol",
+		"on-click": "pactl set-sink-mute 0 toggle",
+		"on-click-right":"pavucontrol"
 	},
 
 	"custom/power":{
@@ -97,6 +98,7 @@
 
 	"custom/sep":{
 		"return-type":"",
-		"format":"{}|"
+		"format":"{}|",
+		"tooltip":false,
 	},
 }
