@@ -94,20 +94,6 @@ require('lazy').setup({
     end
   },
 
-  {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = true,
-        theme = 'auto',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
-
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim',         opts = {} },
 
@@ -141,6 +127,9 @@ require('lazy').setup({
 }, {})
 
 -- [[ Setting options ]]
+
+-- highlight current line
+vim.o.cursorline = true
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -182,6 +171,14 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+-- ":Q" as ":q"
+vim.cmd [[command! Qa :qa]]
+vim.cmd [[command! Q :q]]
+
+-- ":WQ" as ":wq"
+vim.cmd [[command! WQ :wq]]
+vim.cmd [[command! Wq :wq]]
 
 -- [[ Basic Keymaps ]]
 
@@ -231,6 +228,10 @@ vim.keymap.set('n', '<leader>/', function()
   })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
+-- buffers
+vim.keymap.set('n', '<leader><space>n', '<cmd>bnext<CR>')
+vim.keymap.set('n', '<leader><space>m', '<cmd>bprevious<CR>')
+
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
@@ -239,7 +240,7 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
 -- fterm toggle
-vim.keymap.set('n', '<leader>tt', require('FTerm').toggle, { })
+vim.keymap.set('n', '<leader>tt', require('FTerm').toggle, {})
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
