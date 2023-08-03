@@ -7,7 +7,7 @@ return {
 
       -- Color table for highlights
       -- stylua: ignore
-      local colors = require('ayu.colors')
+      local colors = require("catppuccin.palettes").get_palette "mocha"
 
       local conditions = {
         buffer_not_empty = function()

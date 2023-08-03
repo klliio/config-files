@@ -41,7 +41,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = { window = { blend = 0 } } },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -85,14 +85,6 @@ require('lazy').setup({
     },
   },
 
-  {
-    -- Ayu theme
-    'Shatur/neovim-ayu',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'ayu-dark'
-    end
-  },
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim',         opts = {} },
@@ -124,6 +116,7 @@ require('lazy').setup({
 
   -- import plugins from directory
   { import = 'plugins' },
+
 }, {})
 
 -- [[ Setting options ]]
@@ -179,6 +172,10 @@ vim.cmd [[command! Q :q]]
 -- ":WQ" as ":wq"
 vim.cmd [[command! WQ :wq]]
 vim.cmd [[command! Wq :wq]]
+vim.cmd [[command! W :w]]
+
+--color scheme
+vim.cmd.colorscheme 'catppuccin'
 
 -- [[ Basic Keymaps ]]
 
