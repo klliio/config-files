@@ -214,6 +214,12 @@ require('telescope').setup {
   },
 }
 
+-- cybu
+vim.keymap.set("n", "[b", "<Plug>(CybuPrev)")
+vim.keymap.set("n", "]b", "<Plug>(CybuNext)")
+vim.keymap.set("n", "<s-tab>", "<plug>(CybuLastusedPrev)")
+vim.keymap.set("n", "<tab>", "<plug>(CybuLastusedNext)")
+
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
 
@@ -227,10 +233,6 @@ vim.keymap.set('n', '<leader>/', function()
     previewer = false,
   })
 end, { desc = '[/] Fuzzily search in current buffer' })
-
--- buffers
-vim.keymap.set('n', '<leader><space>n', '<cmd>bnext<CR>')
-vim.keymap.set('n', '<leader><space>m', '<cmd>bprevious<CR>')
 
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
