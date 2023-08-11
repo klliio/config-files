@@ -41,7 +41,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = { window = { blend = 0 } } },
+      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -173,6 +173,12 @@ vim.cmd [[command! Q :q]]
 vim.cmd [[command! WQ :wq]]
 vim.cmd [[command! Wq :wq]]
 vim.cmd [[command! W :w]]
+
+-- resize splits
+vim.keymap.set('n', '<C-Up>', ":resize -1<CR>", { silent = true, remap = false })
+vim.keymap.set('n', '<C-Down>', ":resize +1<CR>", { silent = true, remap = false })
+vim.keymap.set('n', '<C-Left>', ":vertical resize -1<CR>", { silent = true, remap = false })
+vim.keymap.set('n', '<C-Right>', ":vertical resize +1<CR>", { silent = true, remap = false })
 
 --color scheme
 vim.cmd.colorscheme 'catppuccin'
