@@ -28,6 +28,10 @@ return {
             information = { "undercurl" },
           },
         },
+        indent_blankline = {
+          enabled = true,
+          colored_indent_levels = false,
+        },
         telescope = true,
         treesitter = true,
         fidget = true,
