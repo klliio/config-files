@@ -29,6 +29,23 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  -- dot repeat
+  'tpope/vim-repeat',
+
+  -- navigation
+  {
+    'ggandor/leap.nvim',
+    dependencies = {
+      'tpope/vim-repeat',
+    },
+    opts = {},
+    config = function(_, opts)
+      require('leap').setup(opts)
+      vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap-forward-to)', { remap = true })
+      vim.keymap.set({ 'n', 'x', 'o' }, '<S-s>', '<Plug>(leap-backward-to)', { remap = true })
+    end
+  },
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -41,7 +58,18 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
+      {
+        'j-hui/fidget.nvim',
+        tag = 'legacy',
+        opts = {
+          text = {
+            spinner = "pipe", -- animation shown when tasks are ongoing
+            done = "✔", -- character shown when all tasks are complete
+            commenced = "Started", -- message shown when task starts
+            completed = "Completed", -- message shown when task completes
+          }
+        }
+      },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -179,6 +207,7 @@ vim.keymap.set('n', '<C-Up>', ":resize -1<CR>", { silent = true, remap = false }
 vim.keymap.set('n', '<C-Down>', ":resize +1<CR>", { silent = true, remap = false })
 vim.keymap.set('n', '<C-Left>', ":vertical resize -1<CR>", { silent = true, remap = false })
 vim.keymap.set('n', '<C-Right>', ":vertical resize +1<CR>", { silent = true, remap = false })
+
 
 --color scheme
 vim.cmd.colorscheme 'catppuccin'
