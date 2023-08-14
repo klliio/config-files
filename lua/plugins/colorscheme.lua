@@ -44,6 +44,7 @@ return {
 
   {
     "rose-pine/neovim",
+    lazy = true,
     name = "rose-pine",
     opts = {
       dark_variant = "main"
