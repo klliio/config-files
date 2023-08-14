@@ -1,6 +1,8 @@
 return {
   {
     "ghillb/cybu.nvim",
+    lazy = true,
+    event = 'BufEnter',
     opts = {
       position = {
         relative_to = "win",  -- win, editor, cursor
@@ -52,7 +54,7 @@ return {
         },
         show_on_autocmd = false, -- event to trigger cybu (eg. "BufEnter")
       },
-      display_time = 750,        -- time the cybu window is displayed
+      display_time = 350,        -- time the cybu window is displayed
       exclude = {                -- filetypes, cybu will not be active
         "neo-tree",
         "fugitive",
