@@ -2,7 +2,7 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     opts = {
-      show_current_context = true,
+      indent_blankline_max_indent_increase = 1,
     },
     config = function(_, opts)
       require("indent_blankline").setup(opts)
