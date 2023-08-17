@@ -2,7 +2,6 @@ return {
   {
     "ghillb/cybu.nvim",
     lazy = true,
-    event = 'BufEnter',
     opts = {
       position = {
         relative_to = "win",  -- win, editor, cursor

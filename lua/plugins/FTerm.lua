@@ -2,7 +2,6 @@ return { -- Floating terminal
   {
     "numToStr/FTerm.nvim",
     lazy = true,
-    event = 'BufEnter',
     opts = {
       blend = 30,
       dimensions = {
