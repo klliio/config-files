@@ -3,6 +3,6 @@
 
 #exceptions
 !.gitignore
-!wezterm
-!nvim
+!wezterm/
+!nvim/
 
