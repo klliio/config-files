@@ -1,0 +1,8 @@
+#everything
+*
+
+#exceptions
+!.gitignore
+!wezterm
+!nvim
+
