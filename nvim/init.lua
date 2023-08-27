@@ -26,9 +26,6 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
-
   -- dot repeat
   'tpope/vim-repeat',
 
@@ -152,6 +149,10 @@ require('lazy').setup({
 -- highlight current line
 vim.o.cursorline = true
 
+-- tabstop and shift width
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
@@ -201,6 +202,9 @@ vim.cmd [[command! Q :q]]
 vim.cmd [[command! WQ :wq]]
 vim.cmd [[command! Wq :wq]]
 vim.cmd [[command! W :w]]
+
+-- copy all
+vim.keymap.set('n', '<leader>yy', ':%y+<CR>', { silent = true, remap = false })
 
 -- resize splits
 vim.keymap.set('n', '<C-Up>', ":resize -1<CR>", { silent = true, remap = false })
