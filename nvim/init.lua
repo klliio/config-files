@@ -206,7 +206,7 @@ vim.cmd [[command! Wq :wq]]
 vim.cmd [[command! W :w]]
 
 -- copy all
-vim.keymap.set('n', '<leader>yy', ':%y+<CR>', { silent = true, remap = false })
+vim.keymap.set('n', '<leader>yy', ':%y+<CR><CR>', { silent = true, remap = false })
 
 -- resize splits
 vim.keymap.set('n', '<C-Up>', ":resize -1<CR>", { silent = true, remap = false })
