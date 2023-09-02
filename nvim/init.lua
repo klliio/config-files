@@ -149,6 +149,8 @@ require('lazy').setup({
 -- highlight current line
 vim.o.cursorline = true
 
+vim.o.scrolloff = 20
+
 -- tabstop and shift width
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
@@ -284,7 +286,7 @@ vim.keymap.set('n', '<leader>tt', require('FTerm').toggle, {})
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'lua', 'python', 'rust', 'tsx', 'typescript', 'arduino', 'css', 'html', 'toml' },
+  ensure_installed = { 'c', 'bash', 'cpp', 'lua', 'python', 'rust', 'tsx', 'typescript', 'arduino', 'css', 'html', 'toml' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = true,
@@ -413,6 +415,7 @@ local servers = {
   taplo = {},
   arduino_language_server = {},
   cssls = {},
+  bashls = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   lua_ls = {
     Lua = {
