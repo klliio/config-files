@@ -10,10 +10,11 @@ static const char *fonts[] = {"monospace:size=10"};
 static const char dmenufont[] = "monospace:size=10";
 static const char col_mauve[] = "#cba6f7";
 static const char col_base[] = "#181825";
+static const char col_green[] = "#a6e3a1";
 static const char *colors[][3] = {
     /*               fg         bg         border   */
     [SchemeNorm] = {col_mauve, col_base, col_base},
-    [SchemeSel] = {col_base, col_mauve, col_mauve},
+    [SchemeSel] = {col_base, col_mauve, col_green},
 };
 
 /* tagging */
@@ -38,12 +39,12 @@ static const int attachbelow =
     1; /* 1 means attach after the currently active window */
 static const int lockfullscreen =
     1; /* 1 will force focus on the fullscreen window */
-
+#include "fibonacci.c"
 static const Layout layouts[] = {
     /* symbol     arrange function */
-    {"[]=", tile}, /* first entry is default */
+    {"[\\]", dwindle}, {"[]=", tile}, /* first entry is default */
     {"><>", NULL}, /* no layout function means floating behavior */
-    {"[M]", monocle},
+    {"[M]", monocle},  {"[@]", spiral},
 };
 
 /* key definitions */
@@ -82,6 +83,8 @@ static const Key keys[] = {
     {MODKEY, XK_t, setlayout, {.v = &layouts[0]}},
     {MODKEY, XK_f, setlayout, {.v = &layouts[1]}},
     {MODKEY, XK_m, setlayout, {.v = &layouts[2]}},
+    {MODKEY, XK_r, setlayout, {.v = &layouts[3]}},
+    {MODKEY | ShiftMask, XK_r, setlayout, {.v = &layouts[4]}},
     {MODKEY, XK_space, setlayout, {0}},
     {MODKEY | ShiftMask, XK_space, togglefloating, {0}},
     {MODKEY, XK_0, view, {.ui = ~0}},
