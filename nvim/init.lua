@@ -149,7 +149,10 @@ require('lazy').setup({
 -- highlight current line
 vim.o.cursorline = true
 
+-- keep cursor near centre
 vim.o.scrolloff = 20
+
+vim.o.guicursor = 'n-v-c-sm:hor20,ci-ve:ver25,r-cr-o:block,i:ver25,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor'
 
 -- tabstop and shift width
 vim.o.tabstop = 4
