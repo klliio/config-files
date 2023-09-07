@@ -1,0 +1,42 @@
+# reload sxhkd
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# quit or restart bspwm
+super + shift + {q,r}
+	bspc {quit,wm -r}
+
+# brightness
+super + {F2,F3}
+	brightnessctl s {-,+}2400
+
+# open terminal or make current window biggest
+super + {_,shift + }Return
+	{alacritty, bspc node -s biggest.local}
+
+# open file manager
+super + e
+	nemo
+
+# run rofi
+super + p
+	rofi -show run
+
+# close or kill window
+super + {_,shift + }w
+	bspc node -{k,c}
+
+# change window state
+super + {t,trl + t,l,f}
+	bspc node -t {tiled,psuedo_tiled,floating,fullscreen}
+
+# change window size
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+super + shift + {h,j,k,l}
+	bspc node -z {left 20 0,bottom 0 -20,top 0 20,right- 20 0}
+
+# focus or send window to different desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
