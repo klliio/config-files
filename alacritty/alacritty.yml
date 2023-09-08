@@ -23,5 +23,7 @@ font:
     style: Bold Italic
 
 cursor:
-    style: underline
-
+    style:
+      shape: Underline
+      blinking: Always
+    blink_interval: 500
