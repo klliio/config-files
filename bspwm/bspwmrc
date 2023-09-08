@@ -3,7 +3,7 @@
 xsetroot -cursor_name left_ptr
 sxhkd &
 picom -b
-./fehbg
+feh --bg-fill /home/klliio/Images/catppuccin/wallpaper.png
 
 bspc config border_width 			2
 bspc config window_gap 				20
