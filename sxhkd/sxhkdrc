@@ -8,7 +8,7 @@ super + shift + {q,r}
 
 # brightness
 super + {F2,F3}
-	brightnessctl s {-,+}2400
+	brightnessctl s 12000{-,+}
 
 # open terminal or make current window biggest
 super + {_,shift + }Return
