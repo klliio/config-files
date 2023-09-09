@@ -1,6 +1,6 @@
 * {
-    bg-col:  #1e1e2e;
-    bg-col-light: #1e1e2e;
+    bg-col:  #11111b;
+    bg-col-light: #11111b;
     border-col: #1e1e2e;
     selected-col: #1e1e2e;
     blue: #f9e2af;
@@ -59,7 +59,7 @@ listview {
     border: 0px 0px 0px;
     padding: 6px 0px 0px;
     margin: 10px 0px 0px 20px;
-    columns: 2;
+    columns: 5;
     lines: 2;
     background-color: @bg-col;
 }
@@ -76,6 +76,7 @@ element-icon {
 
 element selected {
     background-color:  @selected-col ;
+	border-radius: 5px;
     text-color: @fg-col2  ;
 }
 
