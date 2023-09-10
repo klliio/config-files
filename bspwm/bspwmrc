@@ -1,9 +1,11 @@
 #!/bin/bash
 
 xsetroot -cursor_name left_ptr
+numlockx on
 sxhkd &
 picom -b
-feh --bg-fill /home/klliio/Images/catppuccin/wallpaper.png
+~/.config/polybar/launch
+feh --bg-fill /home/klliio/Images/wonderegg/wondereggbridge.png
 
 bspc config border_width 			2
 bspc config window_gap 				20
