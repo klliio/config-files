@@ -22,8 +22,15 @@ super + {_,shift + }Return
 super + e
 	nemo
 
-# run rofi
+# powermenu
+super + Delete
+	powermenu
+
+# rofi apps
 super + p
+	rofi -show drun
+# rofi run
+super + r
 	rofi -show run
 
 # close or kill window
