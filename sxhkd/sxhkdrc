@@ -6,6 +6,10 @@ super + Escape
 super + shift + {q,r}
 	bspc {quit,wm -r}
 
+# media playback
+{XF86AudioPlay,XF86AudioPause,XF86AudioNext,XF86AudioPrev}
+	{playerctl play,playerctl stop,playerctl next,playerctl previous}
+
 # volume
 {XF86AudioMute,XF86AudioLowerVolume,XF86AudioRaiseVolume}
 	{pactl set-sink-mute 0 toggle,pactl set-sink-volume 0 -5%,pactl set-sink-volume 0 +5%}
@@ -16,7 +20,7 @@ super + {F2,F3}
 
 # open terminal or make current window biggest
 super + {_,shift + }Return
-	{alacritty, bspc node -s biggest.local}
+	{wezterm, bspc node -s biggest.local}
 
 # open file manager
 super + e
@@ -35,7 +39,7 @@ super + r
 
 # close or kill window
 super + {_,shift + }w
-	bspc node -{k,c}
+	bspc node -{c,k}
 
 # change window state
 super + {t,ctrl + t,l,f}
