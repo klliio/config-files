@@ -6,6 +6,10 @@ super + Escape
 super + shift + {q,r}
 	bspc {quit,wm -r}
 
+# volume
+super + {F6,F7,F8}
+	{pactl set-sink-mute 0 toggle,pactl set-sink-volume 0 -5%,pactl set-sink-volume 0 -5%}
+
 # brightness
 super + {F2,F3}
 	brightnessctl s 12000{-,+}
