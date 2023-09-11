@@ -44,7 +44,7 @@ config.colors = {
 	},
 
 	-- ?
-	indexed = { [136] = '#f9e2af' },
+	indexed = { [136] = '#0357df' },
 
 	compose_cursor = '#f9e2af', -- show when a leader key is pressed
 
@@ -54,7 +54,7 @@ config.colors = {
 	copy_mode_inactive_highlight_fg = { Color = '#11111b' },
 }
 
--- config.color_scheme = 'Catppuccin Mocha'
+config.color_scheme = 'Catppuccin Mocha'
 config.font = wezterm.font 'Hack Nerd Font Mono'
 config.font_size = 14.0
 config.default_cursor_style = "BlinkingUnderline"
