@@ -109,4 +109,5 @@ textbox {
     margin: 20px 0px 0px 20px;
     text-color: @yellow;
     background-color: @bg-col-light;
+	horizontal-align: 0.5;
 }

@@ -2,7 +2,7 @@ configuration {
 	modes: "window,drun,run,ssh,filebrowser";
 	show-icons: true;
 	icon-theme: "Oranchelo";
-	terminal: "alacritty";
+	terminal: "wezterm";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;
