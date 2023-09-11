@@ -290,7 +290,7 @@ vim.keymap.set('n', '<leader>tt', require('FTerm').toggle, {})
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = { 'c', 'bash', 'cpp', 'lua', 'python', 'rust', 'tsx', 'typescript', 'arduino', 'ini', 'css', 'html',
-    'toml' },
+    'toml', 'yaml' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = true,
@@ -420,6 +420,7 @@ local servers = {
   arduino_language_server = {},
   cssls = {},
   bashls = {},
+  yamlls = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   lua_ls = {
     Lua = {
