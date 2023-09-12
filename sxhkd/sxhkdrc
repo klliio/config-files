@@ -28,11 +28,7 @@ super + e
 
 # powermenu
 super + Delete
-<<<<<<< HEAD
-	powermenu
-=======
 	~/.config/rofi/scripts/powermenu/powermenu.sh
->>>>>>> a5a4c83 (Fix powermenu hotkey)
 
 # rofi apps
 super + p
