@@ -16,4 +16,6 @@ bspc config pointer_follows_focus	false
 
 bspc config automatic_scheme 		dwindle
 
+bspc monitor -d 1 2 3 4 5 6 7 8 9
+
 bspc rule -a Firefox desktop='^9'
