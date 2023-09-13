@@ -21,3 +21,5 @@
 !alacritty/**
 !rofi/
 !rofi/**
+!scripts/
+!scripts/**
