@@ -28,7 +28,7 @@ super + e
 
 # powermenu
 super + Delete
-	~/.config/rofi/scripts/powermenu/powermenu.sh
+	~/.config/scripts/powermenu.sh
 
 # rofi apps
 super + p
