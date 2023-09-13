@@ -1,2 +1,3 @@
 #!/bin/bash
+pkill polybar
 (polybar utils)&
