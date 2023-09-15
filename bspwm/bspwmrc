@@ -4,6 +4,7 @@ xsetroot -cursor_name left_ptr
 numlockx on
 sxhkd &
 picom -b
+~/.config/dunst/kill.sh
 ~/.config/polybar/launch
 feh --bg-fill /home/klliio/Images/wonderegg/wondereggbridge.png
 
