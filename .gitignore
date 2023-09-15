@@ -23,3 +23,5 @@
 !rofi/**
 !scripts/
 !scripts/**
+!dunst/
+!dunst/**
