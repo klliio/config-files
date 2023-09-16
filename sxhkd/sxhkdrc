@@ -41,8 +41,13 @@ super + r
 super + {_,shift + }w
 	bspc node -{c,k}
 
-# rotate window
-super + {q}
+# rotate desktop or selection
+super + {_, shift + } {Left,Right}
+	bspc node {_,@/} -R {-,+}90
+
+# select parent
+super + s
+	bspc node -f @parent
 
 # change window state
 super + {t,ctrl + t,l,f}
