@@ -9,7 +9,9 @@ configuration {
     hide-scrollbar: true;
     display-drun: "   Apps ";
     display-run: "   Run ";
-    display-window: " 﩯  Window";
+    display-filebrowser: " 󰈔  Files ";
+	display-ssh: "   SSH";
+    display-window: " 󱂬  Window";
     display-Network: " 󰤨  Network";
     sidebar-mode: true;
 
