@@ -1,0 +1,77 @@
+configuration {
+	show-icons: false;
+}
+
+/* 1920x1080 */
+* {
+    bg-col:  #11111b;
+    bg-col-light: #11111b;
+    border-col: #1e1e2e;
+    selected-col-col: #1e1e2e;
+    yellow: #f9e2af;
+    fg-col: #cdd6f4;
+    fg-col2: #f9e2af;
+    grey: #6c7086;
+
+    width: 95;
+    font: "JetBrainsMono Nerd Font 24";
+}
+
+/*****----- Main Window -----*****/
+window {
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    east;
+    anchor:                      east;
+    fullscreen:                  false;
+    width:                       @width;
+    x-offset:                    -38px;
+    y-offset:                    -335px;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               12px;
+    border-color:                transparent;
+    cursor:                      "default";
+    background-color:            transparent;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+	spacing: 15px;
+	padding: 15px;
+	background-color: transparent;
+	children: [listview];
+}
+
+/*****----- Listview -----*****/
+listview {
+	background-color: transparent;
+	columns: 1;
+	lines: 6;
+	layout: vertical;
+	fixed-height: true;
+	fixed-columns: true;
+	spacing: 15px;
+	cycle: true;
+}
+
+/*****----- Elements -----*****/
+element {
+	spacing: 10px;
+	text-color: @fg-col;
+	background-color: transparent;
+}
+element-text {
+	font: inherit;
+	text-color: inherit;
+	background-color: inherit;
+	vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+element selected.normal {
+	text-color: @yellow;
+}
