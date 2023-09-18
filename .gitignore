@@ -25,3 +25,7 @@
 !scripts/**
 !dunst/
 !dunst/**
+!ncmpcpp/
+!ncmpcpp/**
+!mpd/
+!mpd**
