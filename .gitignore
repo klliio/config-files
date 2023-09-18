@@ -26,6 +26,6 @@
 !dunst/
 !dunst/**
 !ncmpcpp/
-!ncmpcpp/**
+!ncmpcpp/config
 !mpd/
 !mpd**
