@@ -9,20 +9,24 @@ get_spotify_song_linux() {
   playerctl -p spotify metadata --format "{{ artist }} - {{ title }}"
 }
 
+get_mpd_song_linux() {
+	mpc status | sed -n '1p'
+}
+
 get_firefox_video_linux() {
   playerctl -p firefox metadata --format "{{ artist }} - {{ title }}"
 }
 
-if playerctl status == "Playing" > /dev/null; then
+if playerctl status == "Playing" > /dev/null || mpc status | awk -F'[][]' 'NR==2{print $2}' == "playing" > /dev/null; then
 	if pgrep -x "spotify" > /dev/null; then
 		song="   $(get_spotify_song_linux)"
+	elif pgrep -x "ncmpcpp" > /dev/null; then
+		song="󰎆   $(get_mpd_song_linux)"
 	elif pgrep -x "firefox" > /dev/null; then
 		song="   $(get_firefox_video_linux)"
 	fi
-elif playerctl status == "Paused" > /dev/null; then
-	song=" Paused"
 else
-	song="No players found"
+	song="Not Playing"
 fi
 
 if [[ -n "$song" ]]; then
