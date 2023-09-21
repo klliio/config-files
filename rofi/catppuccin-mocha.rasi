@@ -59,7 +59,7 @@ entry {
 listview {
     border: 0px 0px 0px;
     padding: 6px 0px 0px;
-    margin: 10px 0px 0px 20px;
+    margin: 10px 20px 0px 20px;
     columns: 3;
     lines: 2;
     background-color: @bg-col;
