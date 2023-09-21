@@ -28,4 +28,4 @@
 !ncmpcpp/
 !ncmpcpp/config
 !mpd/
-!mpd**
+!mpd/mpd.conf
