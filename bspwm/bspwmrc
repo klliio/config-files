@@ -9,7 +9,7 @@ picom -b
 feh --bg-fill /home/klliio/Images/wonderegg/wondereggbridge.png
 
 bspc config border_width 			2
-bspc config window_gap 				20
+bspc config window_gap 				10
 
 bspc config split_ratio				0.55
 bspc config focus_follows_pointer	true
