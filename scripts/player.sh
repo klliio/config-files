@@ -1,4 +1,5 @@
 #!/bin/bash
+export LANG=C; LC_ALL=C
 
 if ! command -v playerctl &> /dev/null; then
     echo "playerctl is not installed."
@@ -10,14 +11,14 @@ get_spotify_song_linux() {
 }
 
 get_mpd_song_linux() {
-	mpc -f %albumartist%\ -\ %title%
+	mpc -f %albumartist%\ -\ %title% | sed -n '1p'
 }
 
 get_firefox_video_linux() {
   playerctl -p firefox metadata --format "{{ artist }} - {{ title }}"
 }
 
-if playerctl status == "Playing" > /dev/null || mpc status %state% == "playing" > /dev/null; then
+if playerctl status == "Playing" &> /dev/null || mpc status %state% == "playing" &> /dev/null; then
 	if pgrep -x "spotify" > /dev/null; then
 		song="   $(get_spotify_song_linux)"
 	elif pgrep -x "ncmpcpp" > /dev/null; then
@@ -26,7 +27,7 @@ if playerctl status == "Playing" > /dev/null || mpc status %state% == "playing" 
 		song="   $(get_firefox_video_linux)"
 	fi
 else
-	song="Not Playing"
+	song="Not Players"
 fi
 
 if [[ -n "$song" ]]; then
