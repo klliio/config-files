@@ -37,6 +37,10 @@ super + p
 super + r
 	rofi -show run
 
+# show/hide focused window
+super + {_, shift +} h
+	{bspc node --flag hidden=on,~/.config/scripts/hidden-windows.sh}
+
 # close or kill window
 super + {_,shift + }w
 	bspc node -{c,k}
