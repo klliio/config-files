@@ -99,6 +99,3 @@ cursor:
       shape: Underline
       blinking: Always
     blink_interval: 500
-
-window:
-  opacity: 0.8
