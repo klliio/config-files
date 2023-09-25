@@ -32,6 +32,10 @@
 	color: #f9e2af;
 }
 
+#battery {
+	font-size: 24px;
+}
+
 button:hover {
 	box-shadow: inherit;
 	text-shadow: inherit;

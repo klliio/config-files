@@ -90,9 +90,9 @@
 
 	"network":{
 		"format": "{icon}",
-        "format-wifi": "󰖩 ",
-        "format-ethernet": "󰖩 ",
-        "format-disconnected": "󰖪 ",
+        "format-wifi": "󰤨 ",
+        "format-ethernet": "󰤨 ",
+        "format-disconnected": "󰤭 ",
         "tooltip": false
 	},
 
