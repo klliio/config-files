@@ -43,7 +43,7 @@ if [ "$mpris" == "Playing" ] || [ "$mpd" == "playing" ] ; then
 		*) exit 1 ;;
 	esac
 else
-	song="No Players"
+	song="Nothing is playing"
 fi
 
 if [[ -n "$song" ]]; then
