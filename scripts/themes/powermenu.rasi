@@ -7,7 +7,7 @@ configuration {
     bg-col:  #11111b;
     bg-col-light: #11111b;
     border-col: #1e1e2e;
-    selected-col-col: #1e1e2e;
+    selected-col: #1e1e2e;
     yellow: #f9e2af;
     fg-col: #cdd6f4;
     fg-col2: #f9e2af;
@@ -32,9 +32,9 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
+    border:                      2px solid;
     border-radius:               12px;
-    border-color:                transparent;
+    border-color:                @border-col;
     cursor:                      "default";
     background-color:            transparent;
 }
@@ -43,7 +43,7 @@ window {
 mainbox {
 	spacing: 15px;
 	padding: 15px;
-	background-color: transparent;
+	background-color: @bg-col;
 	children: [listview];
 }
 

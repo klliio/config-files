@@ -1,0 +1,43 @@
+* {
+	font-family: UbuntuMono Nerd Font;
+	font-weight: 600;
+	font-size: 19px;
+	/* background-color: red; */
+	background-color: transparent;
+	color: #cdd6f4;
+	padding: 0;
+	margin: 0;
+}
+
+#custom-void-logo {
+	color: #a6e3a1;
+	font-size: 20px;
+}
+#workspaces button {
+	padding: 6px 10px 6px 0;
+	margin: -7px -3px;
+	border-radius: 24px;
+}
+#workspaces button label {
+	font-size: 28px;
+}
+
+#custom-sep {
+	font-weight: normal;
+	font-size: 21px;
+	color: #9399b2;
+}
+
+#workspaces button label, #custom-power, #battery, #network {
+	color: #f9e2af;
+}
+
+button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+	background: inherit;
+}
+
+tooltip {
+     background-color: #11111b;
+}

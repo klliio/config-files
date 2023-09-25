@@ -29,3 +29,7 @@
 !ncmpcpp/config
 !mpd/
 !mpd/mpd.conf
+!sway/
+!sway/**
+!waybar/
+!waybar/**

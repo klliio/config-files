@@ -1,0 +1,118 @@
+set $mod Mod4
+set $term alacritty
+
+exec mpd --no-daemon $HOME/.config/mpd/mpd.conf &
+exec_always autotiling
+xwayland enable
+
+input * {
+	xkb_layout "gb"
+	xkb_numlock enabled
+}
+
+input <identifier> repeat_delay 300
+input <identifier> repeat_rate 30
+
+bar {
+	swaybar_command waybar
+}
+
+output "*" bg ~/Images/wonderegg/wondereggbridge.png fill
+
+input type:touchpad {
+	tap enabled
+	natural_scroll disabled
+}
+
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+	gsettings set $gnome-schemagsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' color-scheme 'prefer-dark'
+	gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Yellow-dark'
+	gsettings set $gnome-schema font-name 'UbuntuMono 11'
+}
+
+# visual
+default_border pixel 2
+gaps inner 10
+gaps outer 5
+smart_gaps off
+
+# class | border | background | text
+client.focused #f9e2afb3 #f9e2afb3 #f9e2afb3 
+client.unfocused #ffffff00 #ffffff00 #ffffff00
+client.focused_inactive #ffffff00 #ffffff00 #ffffff00
+
+for_window [app_id="Alacritty"] opacity 0.87
+for_window [app_id="Rofi"] opacity 0.85
+for_window [app_id="Spotify"] opacity 0.88
+
+focus_follows_mouse yes
+
+
+# keybinds
+bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+w reload
+
+bindsym $mod+w kill
+bindsym $mod+shift+delete exec ~/.config/scripts/powermenu.sh
+floating_modifier $mod normal
+
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+
+bindsym XF86AudioPlay exec ~/.config/scripts/player-controls.sh --toggle
+bindsym XF86AudioPause exec ~/.config/scripts/player-controls.sh --toggle
+bindsym XF86AudioPrev exec ~/.config/scripts/player-controls.sh --prev
+bindsym XF86AudioNext exec ~/.config/scripts/player-controls.sh --next
+
+bindsym $mod+F2 exec brightnessctl s 12000-
+bindsym $mod+F3 exec brightnessctl s 12000+
+
+bindsym $mod+p exec rofi -show drun
+bindsym $mod+r exec rofi -show run
+bindsym $mod+Return exec $term
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+
+# Horizontal and vertical splits
+bindsym $mod+b splith
+bindsym $mod+v splitv
+
+bindsym $mod+f fullscreen
+bindsym $mod+Shift+space froating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+
+mode "resize" {
+	bindsym h resize shrink width 10px
+	bindsym j resize grow height 10px
+	bindsym k resize shrink height 10px
+	bindsym l resize grow width 10px
+	bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+shift+r mode "resize"
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right

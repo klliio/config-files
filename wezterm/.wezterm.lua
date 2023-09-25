@@ -67,6 +67,7 @@ config.enable_tab_bar = false
 config.check_for_updates = false
 config.automatically_reload_config = true
 config.window_close_confirmation = "NeverPrompt"
+config.enable_wayland = true
 
 
 -- and finally, return the configuration to wezterm

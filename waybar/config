@@ -1,0 +1,102 @@
+// 1920x1080
+
+{
+	"name":"main",
+	"layer":"top",
+	"width":1900,
+	"height":10,
+	"margin-top":8,
+	"spacing":6,
+	"fixed-center": true,
+	"exclusive": true,
+	"modules-left":["custom/void-logo","custom/sep","clock","custom/sep","custom/player"],
+	"modules-center":["sway/workspaces"],
+	"modules-right":["backlight","custom/sep","pulseaudio","custom/sep","custom/power","battery","network"],
+
+	"custom/void-logo":{
+		"return-type":"",
+		"on-click":"alacritty", // preferred terminal
+		"format":"{} ",
+		"tooltip": false,
+	},
+
+	"clock":{
+		"interval":10,
+		"format":"{:%H:%M %Y/%m/%d}",
+		"timezone": "Europe/London",
+	},
+
+	"custom/player":{
+		"exec":"~/.config/scripts/player.sh --combined 30",
+		"on-click":"~/.config/scripts/player-controls.sh --toggle",
+		"interval":2,
+		"tooltip":false,
+	},
+
+	"sway/workspaces":{
+		"disable-scroll": true,
+		"warp-on-scroll": false,
+		"format": "{icon}",
+		"format-icons": {
+			"urgent": "󰗖",
+			"focused": "",
+			"default": "",
+		},
+		"persistent_workspaces":{
+			"1":[],
+			"2":[],
+			"3":[],
+			"4":[],
+			"5":[],
+			"6":[],
+			"7":[],
+			"8":[],
+			"9":[],
+		 },
+		"sort-by-number": true
+	},
+
+	"backlight":{
+		"device":"intel_backlight",
+		"format":"<span color=\"#f9e2af\">{icon}</span> {percent}%",
+		"format-icons":["󰃞","󰃝","󰃟","󰃠"],
+		"tooltip":false,
+	},
+
+	"pulseaudio":{
+		"format":"<span color=\"#f9e2af\">{icon}</span> {volume}%",
+		"format-muted":"<span color=\"#f38ba8\">󰸈</span> Muted",
+		"format-icons":["󰕿","󰖀","󰕾"],
+		"scroll-step": 1,
+		"on-click": "pavucontrol",
+	},
+
+	"custom/power":{
+		"on-click":"~/.config/scripts/powermenu.sh",
+		"format":"⏻ ",
+		"tooltip":false,
+	},
+
+	"battery":{
+		"bat":"BAT1",
+		"format":"{icon}",
+		"format-charging":"󱐋 ",
+		"format-icons":[" "," "," "," "," "],
+		"full-at":96,
+		"tooltip":false,
+		"interval":2,
+	},
+
+	"network":{
+		"format": "{icon}",
+        "format-wifi": "󰖩 ",
+        "format-ethernet": "󰖩 ",
+        "format-disconnected": "󰖪 ",
+        "tooltip": false
+	},
+
+	"custom/sep":{
+		"return-type":"",
+		"format":"{}|"
+	},
+}
