@@ -84,16 +84,18 @@
 		"format-charging":"󱐋 ",
 		"format-icons":[" "," "," "," "," "],
 		"full-at":96,
-		"tooltip":false,
-		"interval":2,
+		"tooltip":true,
+		"tooltip-format":"{capacity}%",
+		"interval":5,
 	},
 
 	"network":{
-		"format": "{icon}",
-        "format-wifi": "󰤨 ",
-        "format-ethernet": "󰤨 ",
-        "format-disconnected": "󰤭 ",
-        "tooltip": false
+		"format":"{icon}",
+        "format-wifi":"󰤨 ",
+        "format-ethernet":"󰤨 ",
+        "format-disconnected":"󰤭 ",
+        "tooltip":true,
+		"tooltip-format":" {bandwidthUpBits}\n {bandwidthDownBits}",
 	},
 
 	"custom/sep":{

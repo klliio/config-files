@@ -43,5 +43,6 @@ button:hover {
 }
 
 tooltip {
+	border: 1px solid #f9e2af;
      background-color: #11111b;
 }
