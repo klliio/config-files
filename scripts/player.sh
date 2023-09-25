@@ -10,39 +10,41 @@ if ! command -v playerctl &> /dev/null; then
     exit 1
 fi
 
-get_spotify_song_linux() {
-  playerctl -p spotify metadata --format "{{ artist }} - {{ title }}"
+get_spotify_song() {
+  playerctl -p spotify metadata --format "{{ artist }} - {{ title }}" 2> /dev/null
 }
 
-get_mpd_song_linux() {
-	mpc -f %albumartist%\ -\ %title% | sed -n '1p'
+get_mpd_song() {
+	mpc -f %albumartist%\ -\ %title% | sed -n '1p' 2> /dev/null
 }
 
-get_firefox_video_linux() {
-  playerctl -p firefox metadata --format "{{ artist }} - {{ title }}"
+get_firefox_video() {
+	playerctl -p firefox metadata --format "{{ artist }} - {{ title }}" 2> /dev/null
 }
 
-if playerctl status == "Playing" &> /dev/null || mpc status %state% == "playing" &> /dev/null; then
+mpris="`playerctl status`"
+mpd="`mpc status %state%`"
+if [ "$mpris" == "Playing" ] || [ "$mpd" == "playing" ] ; then
 	if pgrep -x "spotify" > /dev/null; then
-		title="$(get_spotify_song_linux)"
+		title="$(get_spotify_song)"
 		icon=" "
 	elif pgrep -x "ncmpcpp" > /dev/null; then
-		title="$(get_mpd_song_linux)"
+		title="$(get_mpd_song)"
 		icon="󰎆 "
 	elif pgrep -x "firefox" > /dev/null; then
-		title="$(get_firefox_video_linux)"
+		title="$(get_firefox_video)"
 		icon=" "
 	fi
+
+	case "$1" in
+		--icon) song="$icon" ;;
+		--title) song="$title" ;;
+		--combined) song="$icon$title" ;;
+		*) exit 1 ;;
+	esac
 else
 	song="No Players"
 fi
-
-case "$1" in
-	--icon) song="$icon" ;;
-	--title) song="$title" ;;
-	--combined) song="$icon$title" ;;
-	*) exit 1 ;;
-esac
 
 if [[ -n "$song" ]]; then
 	if [ ! -z "$2" ]; then
