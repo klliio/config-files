@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# USAGE ./player.sh [args] [length]
+#  ./player.sh --combined 30
+#
 export LANG=C; LC_ALL=C
 
 if ! command -v playerctl &> /dev/null; then
@@ -20,19 +24,32 @@ get_firefox_video_linux() {
 
 if playerctl status == "Playing" &> /dev/null || mpc status %state% == "playing" &> /dev/null; then
 	if pgrep -x "spotify" > /dev/null; then
-		song="   $(get_spotify_song_linux)"
+		title="$(get_spotify_song_linux)"
+		icon=" "
 	elif pgrep -x "ncmpcpp" > /dev/null; then
-		song="󰎆   $(get_mpd_song_linux)"
+		title="$(get_mpd_song_linux)"
+		icon="󰎆 "
 	elif pgrep -x "firefox" > /dev/null; then
-		song="   $(get_firefox_video_linux)"
+		title="$(get_firefox_video_linux)"
+		icon=" "
 	fi
 else
-	song="Not Players"
+	song="No Players"
 fi
 
+case "$1" in
+	--icon) song="$icon" ;;
+	--title) song="$title" ;;
+	--combined) song="$icon$title" ;;
+	*) exit 1 ;;
+esac
+
 if [[ -n "$song" ]]; then
-	if [ ${#song} -gt 30 ]; then
-		song="${song:0:30}..."
+	if [ ! -z "$2" ]; then
+		if [ ${#song} -gt "$2" ]; then
+			song="${song:0:"$2"}..."
+		fi
 	fi
+
 	echo "$song"
 fi
