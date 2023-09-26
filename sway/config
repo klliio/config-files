@@ -37,14 +37,13 @@ gaps inner 10
 gaps outer 5
 smart_gaps off
 
-# class | border | background | text
-client.focused #f9e2afb3 #f9e2afb3 #f9e2afb3 
-client.unfocused #ffffff00 #ffffff00 #ffffff00
-client.focused_inactive #ffffff00 #ffffff00 #ffffff00
+# class | border | background | text | indicator
+client.focused #f9e2af #f9e2af #f9e2af #f9e2af
+client.unfocused #ffffff00 #ffffff00 #ffffff00 #ffffff00
+client.focused_inactive #ffffff00 #ffffff00 #ffffff00 #ffffff00
 
 for_window [app_id="Alacritty"] opacity 0.87
 for_window [app_id="Rofi"] opacity 0.85
-for_window [app_id="Spotify"] opacity 0.88
 
 focus_follows_mouse yes
 
