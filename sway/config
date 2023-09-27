@@ -71,6 +71,7 @@ bindsym $mod+F3 exec brightnessctl s 12000+
 bindsym $mod+p exec rofi -show drun
 bindsym $mod+r exec rofi -show run
 bindsym $mod+Return exec $term
+bindsym Print exec ~/.config/scripts/rofi-grim.sh
 
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
