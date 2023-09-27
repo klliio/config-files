@@ -38,7 +38,7 @@ while true; do
                 ;;
         esac
     else
-        mv "$tmp_file" "$HOME/pictures/$file_name.jpg"
+        mv "$tmp_file" "$HOME/Images/Screenshots/$file_name.jpg"
         notify-send "Screenshot saved as $file_name.jpg"
         break
     fi
