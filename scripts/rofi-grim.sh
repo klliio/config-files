@@ -6,7 +6,7 @@ grim -t jpeg -q 100 $tmp_file
 
 while true; do
     # Use Rofi prompt to ask for a file name
-    file_name=$(echo -n "" | rofi -dmenu -p "Enter file name")
+    file_name=$(echo  "`ls ~/Images/Screenshots/`" | rofi -dmenu -p "Enter file name")
     
     # Check if a file name was entered
     if [[ -z "$file_name" ]]; then
