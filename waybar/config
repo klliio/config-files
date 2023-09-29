@@ -24,6 +24,8 @@
 		"interval":10,
 		"format":"{:%H:%M %Y/%m/%d}",
 		"timezone": "Europe/London",
+		"tooltip":true,
+		"tooltip-format":"{:%A %d %B %Y}",
 	},
 
 	"custom/player":{
