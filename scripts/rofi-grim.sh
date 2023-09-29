@@ -4,18 +4,20 @@
 tmp_file=$(mktemp /tmp/screenshot_XXXXXX.png)
 grim -t jpeg -q 100 $tmp_file
 
+scrshotDir="$HOME/Images/Screenshots/"
+
 while true; do
     # Use Rofi prompt to ask for a file name
-    file_name=$(echo  "`ls ~/Images/Screenshots/`" | rofi -dmenu -p "Enter file name")
+    file_name=$(echo  "`ls $scrshotDir | sed -E 's/\.[a-zA-Z]+$//'`" | rofi -dmenu -p "Enter file name")
     
     # Check if a file name was entered
-    if [[ -z "$file_name" ]]; then
+    if [ -z "$file_name" ]; then
         notify-send "No file name entered. Aborting."
         exit 1
     fi
     
-    if [[ -f $HOME/Images/Screenshots/$file_name.jpg ]]; then
-        choice=$(echo -e "rename\nreplace\nkeep & ignore" | rofi -dmenu -p "File with the same name exists!")
+    if [ -f $scrshotDir$file_name.jpg ]; then
+        choice=$(echo "rename\nreplace\nkeep & ignore" | rofi -dmenu -p "File with the same name exists!")
     
         case "$choice" in
             "rename")
@@ -38,7 +40,7 @@ while true; do
                 ;;
         esac
     else
-        mv "$tmp_file" "$HOME/Images/Screenshots/$file_name.jpg"
+        mv "$tmp_file" "$scrshotDir$file_name.jpg"
         notify-send "Screenshot saved as $file_name.jpg"
         break
     fi
