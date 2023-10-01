@@ -211,6 +211,9 @@ vim.cmd [[command! W :w]]
 -- copy all
 vim.keymap.set('n', '<leader>yy', ':%y+<CR><CR>', { silent = true, remap = false })
 
+-- insert line above
+vim.keymap.set('n', 'S-o', '^i<CR><Esc>k^i', { silent = true, remap = false })
+
 -- resize splits
 vim.keymap.set('n', '<C-Up>', ":resize -1<CR>", { silent = true, remap = false })
 vim.keymap.set('n', '<C-Down>', ":resize +1<CR>", { silent = true, remap = false })
@@ -290,7 +293,7 @@ vim.keymap.set('n', '<leader>tt', require('FTerm').toggle, {})
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = { 'c', 'bash', 'cpp', 'lua', 'python', 'rust', 'tsx', 'typescript', 'arduino', 'ini', 'css', 'html',
-    'toml', 'yaml' },
+    'toml', 'yaml', 'json' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = true,
@@ -419,6 +422,7 @@ local servers = {
   taplo = {},
   arduino_language_server = {},
   cssls = {},
+  jsonls = {},
   bashls = {},
   yamlls = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
