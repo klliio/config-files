@@ -99,3 +99,11 @@ cursor:
       shape: Underline
       blinking: Always
     blink_interval: 500
+
+window:
+    opacity: 1
+    dynamic_title: true
+    decorations_theme_variant: None
+    padding:
+      x: 4
+      y: 2
