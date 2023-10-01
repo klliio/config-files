@@ -53,5 +53,5 @@ if [[ -n "$song" ]]; then
 		fi
 	fi
 
-	echo "$song"
+	echo "`sed 's/VEVO//g' <<< $song`"
 fi
