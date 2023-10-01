@@ -40,7 +40,7 @@ gaps outer 5
 smart_gaps off
 
 # class | border | background | text | indicator
-client.focused #f9e2af #f9e2af #f9e2af #f9e2af
+client.focused #74c7ec #74c7ec #74c7ec #74c7ec
 client.unfocused #ffffff00 #ffffff00 #ffffff00 #ffffff00
 client.focused_inactive #ffffff00 #ffffff00 #ffffff00 #ffffff00
 

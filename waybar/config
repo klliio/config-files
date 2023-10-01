@@ -60,13 +60,13 @@
 
 	"backlight":{
 		"device":"intel_backlight",
-		"format":"<span color=\"#f9e2af\">{icon}</span> {percent}%",
+		"format":"<span color=\"#74c7ec\">{icon}</span> {percent}%",
 		"format-icons":["󰃞","󰃝","󰃟","󰃠"],
 		"tooltip":false,
 	},
 
 	"pulseaudio":{
-		"format":"<span color=\"#f9e2af\">{icon}</span> {volume}%",
+		"format":"<span color=\"#74c7ec\">{icon}</span> {volume}%",
 		"format-muted":"<span color=\"#f38ba8\">󰸈</span> Muted",
 		"format-icons":["󰕿","󰖀","󰕾"],
 		"scroll-step": 1,

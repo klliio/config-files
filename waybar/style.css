@@ -29,7 +29,7 @@
 }
 
 #workspaces button label, #custom-power, #battery, #network {
-	color: #f9e2af;
+	color: #74c7ec;
 }
 
 #battery {
@@ -43,6 +43,6 @@ button:hover {
 }
 
 tooltip {
-	border: 1px solid #f9e2af;
+	border: 1px solid #74c7ec;
      background-color: #11111b;
 }
