@@ -33,3 +33,5 @@
 !sway/**
 !waybar/
 !waybar/**
+!swaylock/
+!swaylock/**
