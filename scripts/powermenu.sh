@@ -14,7 +14,11 @@ theme="~/.config/scripts/themes/powermenu.rasi"
 option=$(printf "$lock\n$placeholder\n$poweroff\n$reboot\n$sleep\n$hibernate" | rofi -dmenu -theme $theme -i)
 
 case "$option" in
-	"$lock") $i3lock ;;
+	"$lock") if echo $XDG_SESSION_TYPE == "wayland"; then
+				swaylock
+			elif echo $XDG_SESSION_TYPE == "tty"; then # X returns as tty
+				$i3lock
+			fi;;
 	"$poweroff") loginctl poweroff ;;
 	"$reboot") loginctl reboot ;;
 	"$sleep") loginctl suspend-then-hibernate ;;
