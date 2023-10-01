@@ -2,7 +2,9 @@ set $mod Mod4
 set $term alacritty
 
 exec mpd --no-daemon $HOME/.config/mpd/mpd.conf &
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always autotiling
+exec_always udiskie --automount --notify
 xwayland enable
 
 input * {
