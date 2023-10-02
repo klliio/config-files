@@ -1,6 +1,6 @@
 #!/bin/bash
 
-placeholder=" 󰍃 "
+logout=" 󰍃 "
 lock="  "
 poweroff=" ⏻ "
 reboot="  "
@@ -11,7 +11,7 @@ i3lock="i3lock -c 11111b -e --force-clock  --indicator --radius 90 --ring-width 
 theme="~/.config/scripts/themes/powermenu.rasi"
 
 # uptime="`uptime -p | sed -e 's/up //g;s/, /\n/g'`"
-option=$(printf "$lock\n$placeholder\n$poweroff\n$reboot\n$sleep\n$hibernate" | rofi -dmenu -theme $theme -i)
+option=$(printf "$lock\n$logout\n$poweroff\n$reboot\n$sleep\n$hibernate" | rofi -dmenu -theme $theme -i)
 
 case "$option" in
 	"$lock") if echo $XDG_SESSION_TYPE == "wayland"; then
@@ -19,6 +19,7 @@ case "$option" in
 			elif echo $XDG_SESSION_TYPE == "tty"; then # X returns as tty
 				$i3lock
 			fi;;
+	"$logout") loginctl terminate-session ${XDG_SESSION_ID} ;;
 	"$poweroff") loginctl poweroff ;;
 	"$reboot") loginctl reboot ;;
 	"$sleep") loginctl suspend-then-hibernate ;;
