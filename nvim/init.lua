@@ -222,7 +222,7 @@ vim.keymap.set('n', '<C-Right>', ":vertical resize +1<CR>", { silent = true, rem
 
 
 --color scheme
-vim.cmd.colorscheme 'rose-pine'
+vim.cmd.colorscheme 'tokyonight'
 
 -- [[ Basic Keymaps ]]
 
