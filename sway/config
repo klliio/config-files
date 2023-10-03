@@ -5,6 +5,7 @@ exec pipewire &
 exec pipewire-pulse &
 exec wireplumber &
 
+exec dunst &
 exec blueman-applet &
 exec mpd --no-daemon $HOME/.config/mpd/mpd.conf &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -52,7 +53,7 @@ client.unfocused #ffffff00 #ffffff00 #ffffff00 #ffffff00
 client.focused_inactive #ffffff00 #ffffff00 #ffffff00 #ffffff00
 
 for_window [app_id="Alacritty"] opacity 0.87
-for_window [app_id="Rofi"] opacity 0.85
+for_window [class="Spotify"] opacity 0.87
 
 focus_follows_mouse yes
 
