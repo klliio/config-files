@@ -105,7 +105,8 @@ bindsym $mod+Shift+9 move container to workspace number 9
 
 # scratchpad
 bindsym $mod+Shift+s move scratchpad
-bindsym $mod+s scratchpad show
+bindsym $mod+s ~/.config/scripts/hiddenwindows.sh
+# bindsym $mod+s scratchpad show
 
 # Horizontal and vertical splits
 bindsym $mod+b splith
