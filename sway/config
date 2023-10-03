@@ -1,8 +1,13 @@
 set $mod Mod4
 set $term alacritty
 
+exec pipewire &
+exec pipewire-pulse &
+exec wireplumber &
+
 exec mpd --no-daemon $HOME/.config/mpd/mpd.conf &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/bin/syncthing serve --no-browser --logfile=default
 exec_always autotiling
 exec_always udiskie --automount --notify
 xwayland enable
@@ -58,9 +63,9 @@ bindsym $mod+w kill
 bindsym $mod+shift+delete exec ~/.config/scripts/powermenu.sh
 floating_modifier $mod normal
 
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 bindsym XF86AudioPlay exec ~/.config/scripts/player-controls.sh --toggle
 bindsym XF86AudioPause exec ~/.config/scripts/player-controls.sh --toggle
