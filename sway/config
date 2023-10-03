@@ -5,9 +5,11 @@ exec pipewire &
 exec pipewire-pulse &
 exec wireplumber &
 
+exec blueman-applet &
 exec mpd --no-daemon $HOME/.config/mpd/mpd.conf &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/bin/syncthing serve --no-browser --logfile=default
+
 exec_always autotiling
 exec_always udiskie --automount --notify
 xwayland enable
@@ -56,7 +58,7 @@ focus_follows_mouse yes
 
 
 # keybinds
-bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+q exec sway exit
 bindsym $mod+Shift+w reload
 
 bindsym $mod+w kill
