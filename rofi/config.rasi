@@ -24,4 +24,4 @@ configuration {
       sorting-method:    "name";
   }
 }
-@theme "catppuccin-mocha"
+@theme "tokyonight-night"
