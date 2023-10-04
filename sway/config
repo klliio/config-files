@@ -30,8 +30,17 @@ bar {
 output "*" bg ~/Images/wonderegg/wondereggbridge.png fill
 
 input type:touchpad {
+	pointer_accel -0.25
 	tap enabled
 	natural_scroll disabled
+	scroll_factor 1
+}
+
+input type:pointer {
+	pointer_accel -0.3
+	tap enabled
+	natural_scroll disabled
+	scroll_factor 5
 }
 
 set $gnome-schema org.gnome.desktop.interface
