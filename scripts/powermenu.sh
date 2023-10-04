@@ -13,10 +13,11 @@ theme="~/.config/scripts/themes/powermenu.rasi"
 # uptime="`uptime -p | sed -e 's/up //g;s/, /\n/g'`"
 option=$(printf "$lock\n$logout\n$poweroff\n$reboot\n$sleep\n$hibernate" | rofi -dmenu -theme $theme -i)
 
+session_type="`echo $XDG_SESSION_TYPE`"
 case "$option" in
-	"$lock") if echo $XDG_SESSION_TYPE == "wayland"; then
+	"$lock") if [ "$session_type" = "wayland" ] ; then
 				swaylock
-			elif echo $XDG_SESSION_TYPE == "tty"; then # X returns as tty
+			elif [ "$session_type" = "tty" ] ; then # X returns as tty
 				$i3lock
 			fi;;
 	"$logout") loginctl terminate-session ${XDG_SESSION_ID} ;;
