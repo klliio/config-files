@@ -40,7 +40,7 @@ input type:pointer {
 	pointer_accel -0.3
 	tap enabled
 	natural_scroll disabled
-	scroll_factor 5
+	scroll_factor 2.2
 }
 
 set $gnome-schema org.gnome.desktop.interface
