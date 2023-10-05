@@ -10,30 +10,23 @@ if ! command -v playerctl &> /dev/null; then
     exit 1
 fi
 
-get_spotify_song() {
-  playerctl -p spotify metadata --format "{{ artist }} - {{ title }}" 2> /dev/null
+get_playerctl_song() {
+  playerctl metadata --format "{{ artist }} - {{ title }}" 2> /dev/null
 }
 
 get_mpd_song() {
 	mpc -f %albumartist%\ -\ %title% | sed -n '1p' 2> /dev/null
 }
 
-get_firefox_video() {
-	playerctl -p firefox metadata --format "{{ artist }} - {{ title }}" 2> /dev/null
-}
-
 mpris="`playerctl status`"
 mpd="`mpc status %state%`"
 if [ "$mpris" == "Playing" ] || [ "$mpd" == "playing" ] ; then
-	if pgrep -x "spotify" > /dev/null; then
-		title="$(get_spotify_song)"
-		icon=" "
-	elif pgrep -x "ncmpcpp" > /dev/null; then
+	if pgrep -x "ncmpcpp" > /dev/null; then
 		title="$(get_mpd_song)"
 		icon="󰎆 "
-	elif pgrep -x "firefox" > /dev/null; then
-		title="$(get_firefox_video)"
-		icon=" "
+	else
+		title="$(get_playerctl_song)"
+		icon=" "
 	fi
 
 	case "$1" in
