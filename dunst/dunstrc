@@ -38,7 +38,7 @@
 	frame_width = 2
 
 	# colour of the border
-	frame_color = "#7dcfff"
+	frame_color = "#abbcdacc"
 
 	gap_size = 0
 
@@ -118,16 +118,16 @@
 	max_icon_size = 75
 
 [urgency_low]
-	background = "#11111b"
-	foreground = "#cdd6f4"
+	background = "#424153cc"
+	foreground = "#cccccc"
 	timeout = 10
 
 [urgency_normal]
-	background = "#11111b"
-	foreground = "#cdd6f4"
+	background = "#424153cc"
+	foreground = "#cccccc"
 	timeout = 10
 
 [urgency_critical]
-	background = "#cdd6f4"
-	foreground = "#11111b"
+	background = "#cccccccc"
+	foreground = "#424153"
 	timeout = 0
