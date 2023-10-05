@@ -1,23 +1,21 @@
 // 1920x1080
-/*
-	the first and last module on hte left and right respectivly
-	a re required to have two spaces added before or after the icons
-	to have space between the icon and the edge of the background.
-*/
-
 {
-	"name":"main",
-	"layer":"top",
-	"width":1895,
-	"height":10,
-	"margin-top":8,
-	"spacing":6,
+	"name": "main",
+	"layer": "top",
+	"width": 1895,
+	"height": 10,
+	"margin-top": 5,
+	"margin-bottom": -10,
+	"spacing": 6,
 	"fixed-center": true,
 	"exclusive": true,
-	"modules-left":["custom/power","battery","network","custom/sep","sway/workspaces"],
-	"modules-right":["backlight","custom/sep","wireplumber","custom/sep","clock"],
-
-	"sway/workspaces":{
+	"modules-left": [
+		"group/misc",
+		"custom/player"
+	],
+	"modules-center": ["sway/workspaces"],
+	"modules-right": ["group/hardware","group/time"],
+	"sway/workspaces": {
 		"disable-scroll": true,
 		"warp-on-scroll": false,
 		"format": "{icon}",
@@ -26,68 +24,120 @@
 			"focused": "",
 			"default": "",
 		},
-		"persistent_workspaces":{
-			"1":[],
-			"2":[],
-			"3":[],
-			"4":[],
-		 },
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+			"9": [],
+		},
 		"sort-by-number": true
 	},
-
-	"backlight":{
-		"device":"intel_backlight",
-		"format":"<span color=\"#74c7ec\">{icon}</span> {percent}%",
-		"format-icons":["󰃞","󰃝","󰃟","󰃠"],
-		"tooltip":false,
+	"backlight": {
+		"device": "intel_backlight",
+		"format": " <span color=\"#abbcda\">{icon}</span> {percent}%",
+		"format-icons": [
+			"󰃞",
+			"󰃝",
+			"󰃟",
+			"󰃠"
+		],
+		"tooltip": false,
 	},
-
 	"wireplumber": {
-    	"format": "<span color=\"#74c7ec\">{icon}</span> {volume}%",
-    	"format-muted": " Muted",
+		"format": " <span color=\"#abbcda\">{icon}</span> {volume}%",
+		"format-muted": " Muted",
 		"on-click": "pactl set-sink-mute 0 toggle",
-		"on-click-right":"pavucontrol",
-    	"format-icons": ["", "", ""],
-		"tooltip":false,
+		"on-click-right": "pavucontrol",
+		"format-icons": [
+			"",
+			"",
+			""
+		],
+		"tooltip": false,
 	},
 
-	"clock":{
-		"interval":10,
-		"format":"{:%H:%M %Y/%m/%d }",
+	"group/hardware":{
+		"orientation":"horizontal",
+		"modules":[
+			"backlight",
+			"custom/sep",
+			"wireplumber",
+		],
+	},
+	"clock": {
+		"interval": 10,
+		"format": "{:%H:%M}",
 		"timezone": "Europe/London",
-		"tooltip":true,
-		"tooltip-format":"{:%A %d %B %Y}",
+		"tooltip": true,
+	},
+		"clock#date": {
+		"interval": 10,
+		"format": "{:%Y/%m/%d}",
+		"timezone": "Europe/London",
+		"tooltip": true,
 	},
 
-	"custom/sep":{
-		"return-type":"",
-		"format":"{}|",
+	"group/time":{
+		"orientation":"horizontal",
+		"modules":[
+		"clock",
+		"custom/sep",
+		"clock#date",
+	],
+	},
+
+	"custom/sep": {
+		"return-type": "",
+		"format": "{}|",
+		"tooltip": false,
+	},
+	"custom/power": {
+		"on-click": "~/.config/scripts/powermenu.sh",
+		"format": " ⏻ ",
+		"tooltip": false,
+	},
+	"battery": {
+		"bat": "BAT1",
+		"format": "{icon}",
+		"format-charging": "󱐋 ",
+		"format-icons": [
+			" ",
+			" ",
+			" ",
+			" ",
+			" "
+		],
+		"full-at": 96,
+		"tooltip": true,
+		"tooltip-format": "{capacity}%",
+		"interval": 5,
+	},
+	"network": {
+		"format": "{icon}",
+		"format-wifi": "󰤨 ",
+		"format-ethernet": "󰤨 ",
+		"format-disconnected": "󰤭 ",
+		"tooltip": true,
+		"tooltip-format": " {bandwidthUpBits}\n {bandwidthDownBits}",
+	},
+	"group/misc": {
+		"orientation": "horizontal",
+		"modules": [
+			"custom/power",
+			"battery",
+			"network",
+		]
+	},
+
+	"custom/player":{
+		"exec":"~/.config/scripts/player.sh --title 30",
+		"on-click":"~/.config/scripts/player-controls.sh --toggle",
+		"interval":2,
 		"tooltip":false,
-	},
-
-	"custom/power":{
-		"on-click":"~/.config/scripts/powermenu.sh",
-		"format":" ⏻ ",
-		"tooltip":false,
-	},
-
-	"battery":{
-		"bat":"BAT1",
-		"format":"{icon}",
-		"format-charging":"󱐋 ",
-		"format-icons":[" "," "," "," "," "],
-		"full-at":96,
-		"tooltip":true,
-		"tooltip-format":"{capacity}%",
-		"interval":5,
-	},
-
-	"network":{
-		"format":"{icon}",
-        "format-wifi":"󰤨 ",
-        "format-ethernet":"󰤨 ",
-        "format-disconnected":"󰤭 ",
-        "tooltip":true,
-		"tooltip-format":" {bandwidthUpBits}\n {bandwidthDownBits}",
 	},
 }

@@ -27,7 +27,7 @@ bar {
 	swaybar_command waybar
 }
 
-output "*" bg ~/Images/eighty-six/snow.png fill
+output "*" bg ~/Images/apocalypse.png fill
 
 input type:touchpad {
 	pointer_accel -0.1

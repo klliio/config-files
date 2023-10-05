@@ -1,11 +1,11 @@
 * {
 	font-family: UbuntuMono Nerd Font;
 	font-weight: 600;
-	font-size: 19px;
+	font-size: 21px;
 	/* background-color: red; */
-	background-color: #1e1e2e;
-	color: #cdd6f4;
-	padding: 1px 0;
+	background: transparent;
+	color: #cccccc;
+	padding: 0;
 	margin: 0;
 	border-radius: 24px;
 }
@@ -15,23 +15,33 @@
 }
 
 button:hover {
-	box-shadow: inherit;
-	text-shadow: inherit;
-	background: inherit;
+	box-shadow: none;
+	text-shadow: none;
+	background: none;
 }
 
 tooltip {
 	border-radius: 10px;
-	border: 1px solid #7aa2f7;
-}
-
-#custom-power, #network, #battery {
-	color: #7dcfff;
+	border: 1px solid #abbcda;
+	background: alpha(#424153,0.9);
 }
 
 #custom-sep {
-	font-weight: normal;
-	font-size: 21px;
-	color: #9399b2;
+	color: #999999;
+}
+
+#misc, #hardware, #workspaces, #time, #custom-player {
+	padding: 8px 2px;
+	margin: 0 2px;
+	border-radius: 8px;
+	background: alpha(#424153,0.8);
+}
+
+#custom-power, #battery, #network, #backlight, #wireplumber, #workspaces {
+	padding-right: 8px;
+}
+
+#clock, #clock.date {
+	padding: 0 8px;
 }
 
