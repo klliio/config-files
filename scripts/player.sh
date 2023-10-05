@@ -10,12 +10,12 @@ if ! command -v playerctl &> /dev/null; then
     exit 1
 fi
 
-get_mpd_song() {
-	mpc -f %albumartist%\ -\ %title% | sed -n '1p' 2> /dev/null
+get_playerctl_song() {
+  playerctl metadata --format "{{ artist }} - {{ title }}" 2> /dev/null
 }
 
-get_playerctl_song() {
-	playerctl metadata --format "{{ artist }} - {{ title }}" 2> /dev/null
+get_mpd_song() {
+	mpc -f %albumartist%\ -\ %title% | sed -n '1p' 2> /dev/null
 }
 
 mpris="`playerctl status`"
