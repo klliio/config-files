@@ -3,37 +3,15 @@
 	font-weight: 600;
 	font-size: 19px;
 	/* background-color: red; */
-	background-color: transparent;
+	background-color: #1e1e2e;
 	color: #cdd6f4;
-	padding: 0;
+	padding: 1px 0;
 	margin: 0;
-}
-
-#custom-void-logo {
-	color: #a6e3a1;
-	font-size: 20px;
-}
-#workspaces button {
-	padding: 6px 10px 6px 0;
-	margin: -7px -3px;
 	border-radius: 24px;
 }
+
 #workspaces button label {
-	font-size: 28px;
-}
-
-#custom-sep {
-	font-weight: normal;
-	font-size: 21px;
-	color: #9399b2;
-}
-
-#workspaces button label, #custom-power, #battery, #network {
-	color: #74c7ec;
-}
-
-#battery {
-	font-size: 24px;
+	font-size: 22px;
 }
 
 button:hover {
@@ -43,6 +21,17 @@ button:hover {
 }
 
 tooltip {
-	border: 1px solid #74c7ec;
-     background-color: #11111b;
+	border-radius: 10px;
+	border: 1px solid #7aa2f7;
 }
+
+#custom-power, #network, #battery {
+	color: #7dcfff;
+}
+
+#custom-sep {
+	font-weight: normal;
+	font-size: 21px;
+	color: #9399b2;
+}
+

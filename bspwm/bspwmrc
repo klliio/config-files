@@ -7,7 +7,7 @@ sxhkd &
 picom -b
 ~/.config/dunst/kill.sh
 ~/.config/polybar/launch
-feh --bg-fill /home/klliio/Images/wonderegg/wondereggbridge.png
+feh --bg-fill /home/klliio/Images/eighty-six/snow.png
 
 bspc config border_width 			2
 bspc config window_gap 				10

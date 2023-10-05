@@ -63,6 +63,7 @@ client.focused_inactive #ffffff00 #ffffff00 #ffffff00 #ffffff00
 
 for_window [app_id="Alacritty"] opacity 0.87
 for_window [class="Spotify"] opacity 0.87
+for_window [class="obsidian"] opacity 0.92
 
 focus_follows_mouse yes
 

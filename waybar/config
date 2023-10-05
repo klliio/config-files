@@ -1,39 +1,21 @@
 // 1920x1080
+/*
+	the first and last module on hte left and right respectivly
+	a re required to have two spaces added before or after the icons
+	to have space between the icon and the edge of the background.
+*/
 
 {
 	"name":"main",
 	"layer":"top",
-	"width":1900,
+	"width":1895,
 	"height":10,
 	"margin-top":8,
 	"spacing":6,
 	"fixed-center": true,
 	"exclusive": true,
-	"modules-left":["custom/void-logo","custom/sep","clock","custom/sep","custom/player"],
-	"modules-center":["sway/workspaces"],
-	"modules-right":["backlight","custom/sep","pulseaudio","custom/sep","custom/power","battery","network"],
-
-	"custom/void-logo":{
-		"return-type":"",
-		"on-click":"alacritty", // preferred terminal
-		"format":"{} ",
-		"tooltip": false,
-	},
-
-	"clock":{
-		"interval":10,
-		"format":"{:%H:%M %Y/%m/%d}",
-		"timezone": "Europe/London",
-		"tooltip":true,
-		"tooltip-format":"{:%A %d %B %Y}",
-	},
-
-	"custom/player":{
-		"exec":"~/.config/scripts/player.sh --combined 30",
-		"on-click":"~/.config/scripts/player-controls.sh --toggle",
-		"interval":2,
-		"tooltip":false,
-	},
+	"modules-left":["custom/power","battery","network","custom/sep","sway/workspaces"],
+	"modules-right":["backlight","custom/sep","wireplumber","custom/sep","clock"],
 
 	"sway/workspaces":{
 		"disable-scroll": true,
@@ -49,11 +31,6 @@
 			"2":[],
 			"3":[],
 			"4":[],
-			"5":[],
-			"6":[],
-			"7":[],
-			"8":[],
-			"9":[],
 		 },
 		"sort-by-number": true
 	},
@@ -65,18 +42,32 @@
 		"tooltip":false,
 	},
 
-	"pulseaudio":{
-		"format":"<span color=\"#74c7ec\">{icon}</span> {volume}%",
-		"format-muted":"<span color=\"#f38ba8\">󰸈</span> Muted",
-		"format-icons":["󰕿","󰖀","󰕾"],
-		"scroll-step": 1,
+	"wireplumber": {
+    	"format": "<span color=\"#74c7ec\">{icon}</span> {volume}%",
+    	"format-muted": " Muted",
 		"on-click": "pactl set-sink-mute 0 toggle",
-		"on-click-right":"pavucontrol"
+		"on-click-right":"pavucontrol",
+    	"format-icons": ["", "", ""],
+		"tooltip":false,
+	},
+
+	"clock":{
+		"interval":10,
+		"format":"{:%H:%M %Y/%m/%d }",
+		"timezone": "Europe/London",
+		"tooltip":true,
+		"tooltip-format":"{:%A %d %B %Y}",
+	},
+
+	"custom/sep":{
+		"return-type":"",
+		"format":"{}|",
+		"tooltip":false,
 	},
 
 	"custom/power":{
 		"on-click":"~/.config/scripts/powermenu.sh",
-		"format":"⏻ ",
+		"format":" ⏻ ",
 		"tooltip":false,
 	},
 
@@ -98,11 +89,5 @@
         "format-disconnected":"󰤭 ",
         "tooltip":true,
 		"tooltip-format":" {bandwidthUpBits}\n {bandwidthDownBits}",
-	},
-
-	"custom/sep":{
-		"return-type":"",
-		"format":"{}|",
-		"tooltip":false,
 	},
 }
