@@ -24,24 +24,24 @@ while true; do
                 continue
                 ;;
             "replace")
-                mv "$tmp_file" "$HOME/pictures/$file_name.jpg"
-                notify-send "Screenshot replaced the existing picture."
+                mv "$tmp_file" "$scrshotDir$file_name.jpg"
+                notify-send -a rofi-grim -i $scrshotDir$file_name.jpg Screenshot "Replaced the existing picture."
                 break
                 ;;
             "keep & ignore")
                 rm $tmp_file
-                notify-send "Screenshot discarded. Existing picture kept."
+                notify-send -a rofi-grim -i $scrshotDir$file_name.jpg Screenshot "Discarded. Existing picture kept."
                 break
                 ;;
             *)
-                notify-send "Invalid choice or no action taken. Aborting."
+                notify-send -a rofi-grim Screenshot "Invalid choice or no action taken. Aborting."
                 rm $tmp_file
                 exit 1
                 ;;
         esac
     else
         mv "$tmp_file" "$scrshotDir$file_name.jpg"
-        notify-send "Screenshot saved as $file_name.jpg"
+        notify-send -a rofi-grim -i $scrshotDir$file_name.jpg Screenshot "Saved as $file_name.jpg"
         break
     fi
 done
