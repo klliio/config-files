@@ -39,7 +39,7 @@
 	},
 	"backlight": {
 		"device": "intel_backlight",
-		"format": " <span color=\"#abbcda\">{icon}</span> {percent}%",
+		"format": " {icon} {percent}%",
 		"format-icons": [
 			"󰃞",
 			"󰃝",
@@ -49,7 +49,7 @@
 		"tooltip": false,
 	},
 	"wireplumber": {
-		"format": " <span color=\"#abbcda\">{icon}</span> {volume}%",
+		"format": " {icon} {volume}%",
 		"format-muted": " Muted",
 		"on-click": "pactl set-sink-mute 0 toggle",
 		"on-click-right": "pavucontrol",

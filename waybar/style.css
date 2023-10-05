@@ -11,7 +11,7 @@
 }
 
 #workspaces button label {
-	font-size: 22px;
+	font-size: 25px;
 }
 
 button:hover {
@@ -37,11 +37,12 @@ tooltip {
 	background: alpha(#424153,0.8);
 }
 
+
 #custom-power, #battery, #network, #backlight, #wireplumber, #workspaces {
 	padding-right: 8px;
 }
 
-#clock, #clock.date {
+#clock, #clock.date, #custom-player {
 	padding: 0 8px;
 }
 
