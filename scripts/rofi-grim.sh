@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Take a screenshot using grim command and save it with a temporary file name
 tmp_file=$(mktemp /tmp/screenshot_XXXXXX.png)
@@ -8,7 +8,12 @@ scrshotDir="$HOME/Images/Screenshots/"
 
 while true; do
     # Use Rofi prompt to ask for a file name
-    file_name=$(echo  "`ls $scrshotDir | sed -E 's/\.[a-zA-Z]+$//'`" | rofi -dmenu -p "Enter file name")
+	
+	# uncomment below for sh instead of bash
+    # file_name=$(echo  "`ls $scrshotDir | sed -E 's/\.[a-zA-Z]+$//'`" | rofi -dmenu -p "Enter file name")
+
+	# hard to read
+	file_name=$(ls $scrshotDir | while read A ; do 	echo -en "$A\x00icon\x1f$scrshotDir$A\n" ; done | sed -E 's/\.[a-zA-Z]+\x00/\x00/' | rofi -dmenu -p "Enter file name")
     
     # Check if a file name was entered
     if [ -z "$file_name" ]; then
@@ -17,7 +22,7 @@ while true; do
     fi
     
     if [ -f $scrshotDir$file_name.jpg ]; then
-        choice=$(echo "rename\nreplace\nkeep & ignore" | rofi -dmenu -p "File with the same name exists!")
+        choice=$(printf "rename\nreplace\nkeep & ignore" | rofi -dmenu -p "File with the same name exists!")
     
         case "$choice" in
             "rename")
