@@ -39,7 +39,7 @@
 	},
 	"backlight": {
 		"device": "intel_backlight",
-		"format": " {icon} {percent}%",
+		"format": " {icon} {percent:3}%",
 		"format-icons": [
 			"󰃞",
 			"󰃝",
@@ -49,8 +49,8 @@
 		"tooltip": false,
 	},
 	"wireplumber": {
-		"format": " {icon} {volume}%",
-		"format-muted": " Muted",
+		"format": " {icon} {volume:3}%",
+		"format-muted": " 󰸈  shh",
 		"on-click": "pactl set-sink-mute 0 toggle",
 		"on-click-right": "pavucontrol",
 		"format-icons": [
@@ -137,6 +137,7 @@
 	"custom/player":{
 		"exec":"~/.config/scripts/player.sh --title 30",
 		"on-click":"~/.config/scripts/player-controls.sh --toggle",
+		"format":"{:33}", // needs to be 3 higher than in exec
 		"interval":2,
 		"tooltip":false,
 	},
