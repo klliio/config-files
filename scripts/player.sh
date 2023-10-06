@@ -11,11 +11,11 @@ if ! command -v playerctl &> /dev/null; then
 fi
 
 get_playerctl_song() {
-  playerctl metadata --format "{{ artist }} - {{ title }}" 2> /dev/null
+  playerctl metadata --format "{{ artist }} - {{ title }}" 2> /dev/null | sed 's/VEVO//g'
 }
 
 get_mpd_song() {
-	mpc -f %albumartist%\ -\ %title% | sed -n '1p' 2> /dev/null
+	mpc -f %albumartist%\ -\ %title% | sed -n '1p' 2> /dev/null | sed 's/VEVO//g'
 }
 
 mpris="`playerctl status`"
@@ -43,8 +43,11 @@ if [[ -n "$song" ]]; then
 	if [ ! -z "$2" ]; then
 		if [ ${#song} -gt "$2" ]; then
 			song="${song:0:"$2"}..."
+		else
+			str_diff=$(($2/2-${#song}/2))
+			song=$(awk -v x="$str_diff" '{printf "%" x "s%s" , "", $0}' <<< "$song")
 		fi
 	fi
 
-	echo "`sed 's/VEVO//g' <<< $song`"
+	echo "$song"
 fi
