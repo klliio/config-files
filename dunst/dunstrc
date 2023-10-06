@@ -3,12 +3,12 @@
 	follow = mouse
 	
 	# sizing
-	width = 400
+	width = 390
 	height = 350
 
 	# placement
 	origin = top-right
-	offset = 20x52
+	offset = 13x15
 
 	scale = 0
 
@@ -21,13 +21,13 @@
 	progress_bar_max_width = 250
 
 	# rounded corners
-	icon_corner_radius = 12
+	icon_corner_radius = 8
 
 	# higher more transparent
 	transparency = 0
 
 	#gap between notifcations
-	seperator_height = 3
+	seperator_height = 0
 
 	horizontal_padding = 8
 
@@ -35,10 +35,14 @@
 	text_icon_padding = 10
 
 	# size of border
-	frame_width = 2
+	frame_width = 0
 
 	# colour of the border
-	frame_color = "#abbcdacc"
+	frame_color = "#00000000"
+
+	# colour
+	background = "#323143e6"
+	foreground = "#cccccc"
 
 	gap_size = 0
 
@@ -105,7 +109,7 @@
 
 	# mouse actions
 	mouse_left_click = close_current
-	mosue_middle_click = do_action, close_current
+	mouse_middle_click = do_action, close_current
 	mouse_right_click = close_all
 
 	# Align icons left/right/off
@@ -118,16 +122,10 @@
 	max_icon_size = 75
 
 [urgency_low]
-	background = "#424153cc"
-	foreground = "#cccccc"
 	timeout = 10
 
 [urgency_normal]
-	background = "#424153cc"
-	foreground = "#cccccc"
 	timeout = 10
 
 [urgency_critical]
-	background = "#cccccccc"
-	foreground = "#424153"
 	timeout = 0
