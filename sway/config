@@ -11,8 +11,9 @@ exec mpd --no-daemon $HOME/.config/mpd/mpd.conf &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/bin/syncthing serve --no-browser --logfile=default
 
-exec_always autotiling
-exec_always udiskie --automount --notify
+exec autotiling
+exec udiskie --automount --notify
+
 xwayland enable
 
 input * {
