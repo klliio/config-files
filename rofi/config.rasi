@@ -7,12 +7,11 @@ configuration {
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-drun: "   Apps ";
-    display-run: "   Run ";
-    display-filebrowser: " 󰈔  Files ";
-	display-ssh: "   SSH";
-    display-window: " 󱂬  Window";
-    display-Network: " 󰤨  Network";
+    display-drun: " ";
+    display-run: " ";
+    display-filebrowser: "󰈔"; /* cannot have a space after or it displays wonky */
+	display-ssh: " ";
+    display-window: "󱂬 ";
     sidebar-mode: true;
 
   timeout {
@@ -24,4 +23,4 @@ configuration {
       sorting-method:    "name";
   }
 }
-@theme "tokyonight-night"
+@theme "apocalypse"
