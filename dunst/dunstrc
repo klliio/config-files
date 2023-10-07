@@ -3,7 +3,7 @@
 	follow = mouse
 	
 	# sizing
-	width = 390
+	width = 410
 	height = 350
 
 	# placement
@@ -26,9 +26,6 @@
 	# higher more transparent
 	transparency = 0
 
-	#gap between notifcations
-	seperator_height = 0
-
 	horizontal_padding = 8
 
 	# gap between the icon and text
@@ -45,8 +42,6 @@
 	foreground = "#cccccc"
 
 	gap_size = 0
-
-	seperator_color = frame
 
 	# sort by urgency
 	sort = yes
