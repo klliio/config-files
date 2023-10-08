@@ -2,7 +2,8 @@
 
 session_type="`echo $XDG_SESSION_TYPE`"
 if [ "$session_type" = "wayland" ] ; then
-	if [ $(swaymsg -t get_tree | jq -r 'recurse(.nodes[]) | select(.name == "__i3_scratch").floating_nodes[].name') ] ; then
+	windows=$(swaymsg -t get_tree | jq -r 'recurse(.nodes[]) | select(.name == "__i3_scratch").floating_nodes[].name')
+	if [ "$windows" ] ; then
 		ids=($(swaymsg -t get_tree | jq -r 'recurse(.nodes[]) | select(.name == "__i3_scratch").floating_nodes[].id'))
 		names=$(swaymsg -t get_tree | jq -r 'recurse(.nodes[]) | select(.name == "__i3_scratch").floating_nodes[].name')
 		id_index="$(<<< "$names" rofi -dmenu -p "Hidden" -format i)"
