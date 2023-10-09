@@ -158,6 +158,9 @@ vim.o.guicursor = 'n-v-c-sm:hor20,ci-ve:ver25,r-cr-o:block,i:ver25,a:blinkwait70
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 
+-- statusline visibility
+vim.o.laststatus = 2
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
