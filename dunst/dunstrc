@@ -20,8 +20,8 @@
 	progress_bar_min_width = 250
 	progress_bar_max_width = 250
 
-	# rounded corners
-	icon_corner_radius = 8
+	# icon rounded corners
+	icon_corner_radius = 1
 
 	# higher more transparent
 	transparency = 0
@@ -96,7 +96,7 @@
 	class = Dunst
 
 	# round corners
-	corner_radius = 13
+	corner_radius = 3
 
 	ignore_dbusclose = false
 	force_xwayland = false
