@@ -14,10 +14,9 @@ while true; do
 
 	# hard to read
 	file_name=$(ls $scrshotDir | while read A ; do 	echo -en "$A\x00icon\x1f$scrshotDir$A\n" ; done | sed -E 's/\.[a-zA-Z]+\x00/\x00/' | rofi -dmenu -p "Enter file name")
-    
     # Check if a file name was entered
     if [ -z "$file_name" ]; then
-        notify-send "No file name entered. Aborting."
+        notify-send -a rofi-grim Screenshot "No file name entered. Aborting."
         exit 1
     fi
     
