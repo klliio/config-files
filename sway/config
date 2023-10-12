@@ -46,7 +46,6 @@ input type:pointer {
 
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-	gsettings set $gnome-schemagsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' color-scheme 'prefer-dark'
 	gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Yellow-dark'
 	gsettings set $gnome-schema font-name 'UbuntuMono 11'
 }
