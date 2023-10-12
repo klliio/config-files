@@ -26,7 +26,7 @@ cursor:
     blink_interval: 500
 
 window:
-    opacity: 1
+    opacity: 0.8
     dynamic_title: true
     decorations_theme_variant: None
     padding:
