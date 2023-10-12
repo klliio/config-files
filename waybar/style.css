@@ -7,10 +7,9 @@
 	color: #cccccc;
 	padding: 0;
 	margin: 0;
-	border-radius: 24px;
 }
 
-#workspaces button label {
+#workspaces button label, #tags button label {
 	font-size: 25px;
 }
 
@@ -21,20 +20,20 @@ button:hover {
 }
 
 tooltip {
-	border-radius: 10px;
+	border-radius: 3px;
 	border: 1px solid #abbcda;
-	background: alpha(#424153,0.9);
+	background: alpha(#16161e,0.9);
 }
 
 #custom-sep {
 	color: #999999;
 }
 
-#misc, #hardware, #workspaces, #time, #custom-player {
-	padding: 8px 2px;
+#misc, #hardware, #workspaces, #time, #custom-player, #window {
+	padding: 5px 2px;
 	margin: 0 2px;
-	border-radius: 8px;
-	background: alpha(#424153,0.8);
+	border-radius: 3px;
+	background: alpha(#16161e,0.8);
 }
 
 
@@ -46,3 +45,15 @@ tooltip {
 	padding: 0 8px;
 }
 
+#tags button {
+	background: alpha(#16161e,0.8);
+	border-radius: 3px;
+	opacity: 0.5;
+}
+
+#tags button:hover,
+#tags button.occupied,
+#tags button.focused,
+#tags button.urgent {
+	opacity: 1;
+}

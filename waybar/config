@@ -9,12 +9,9 @@
 	"spacing": 6,
 	"fixed-center": true,
 	"exclusive": true,
-	"modules-left": [
-		"group/misc",
-		"custom/player"
-	],
-	"modules-center": ["sway/workspaces"],
-	"modules-right": ["group/hardware","group/time"],
+	"modules-left": ["sway/workspaces","river/tags"],
+	"modules-center": [],
+	"modules-right": ["group/hardware","group/time","group/misc"],
 	"sway/workspaces": {
 		"disable-scroll": true,
 		"warp-on-scroll": false,
@@ -47,6 +44,10 @@
 			"󰃠"
 		],
 		"tooltip": false,
+	},
+	"river/tags":{
+		"num-tags":9,
+		"disable-click":false,
 	},
 	"wireplumber": {
 		"format": " {icon} {volume:3}%",
@@ -135,9 +136,9 @@
 	},
 
 	"custom/player":{
-		"exec":"~/.config/scripts/player.sh --title 35",
+		"exec":"~/.config/scripts/player.sh --title 30",
 		"on-click":"~/.config/scripts/player-controls.sh --toggle",
-		"format":"{:38}", // needs to be 3 higher than in exec
+		"format":"{:33}", // needs to be 3 higher than in exec
 		"interval":2,
 		"tooltip":false,
 	},
