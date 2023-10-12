@@ -1,53 +1,46 @@
 * {
-    bg-col:  #424153e6;
+    bg-col:  #16161ee6;
     selected-col: #424153;
-    accent: transparent;
+    accent: #e0af68e6;
     fg-col: #cccccc;
-    fg-col2: #cccccc;
+    fg-col2: #e0af68;
 
-    width: 700;
-    font: "JetBrainsMono Nerd Font 14";
-}
+	padding: 0;
+	margin: 0;
 
-element-text, element-icon , mode-switcher {
-    background-color: transparent;
-    text-color:       inherit;
+    width: 450;
+    font: "JetBrainsMono Nerd Font 12";
 }
 
 window {
-    height: 400px;
+    height: 500px;
     border: 3px;
-	border-radius: 8px;
+	border-radius: 0px;
     border-color: @accent;
     background-color: @bg-col;
 }
 
 mainbox {
     background-color: transparent;
+	children: [inputbar,listview];
 }
 
 inputbar {
     children: [prompt,entry];
     background-color: transparent;
-    border-radius: 5px;
-    padding: 2px;
+    border-radius: 0px;
+    padding: 0;
 }
 
 prompt {
-    background-color: @accent;
-    padding: 6px;
+    background-color: transparent;
     text-color: @fg-col2;
-    border-radius: 3px;
-    margin: 20px 0px 0px 20px;
-}
-
-textbox-prompt-colon {
-    expand: false;
-    str: ":";
+    border-radius: 0px;
+    margin: 20px -7px 0px 20px;
 }
 
 entry {
-    padding: 6px;
+    padding: 2px;
     margin: 20px 0px 0px 10px;
     text-color: @fg-col;
     background-color: transparent;
@@ -57,8 +50,7 @@ listview {
     border: 0px 0px 0px;
     padding: 6px 0px 0px;
     margin: 10px 20px 0px 20px;
-    columns: 3;
-    lines: 8;
+    columns: 1;
     background-color: transparent;
 }
 
@@ -68,45 +60,13 @@ element {
     text-color: @fg-col  ;
 }
 
-element-icon {
-    size: 25px;
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
 }
 
 element selected {
-	border-radius: 5px;
-	background-color: @fg-col2;
-    text-color: @selected-col ;
-}
-
-mode-switcher {
-    spacing: 0;
-  }
-
-button {
-    padding: 10px;
-    background-color: transparent;
-    text-color: @fg-col;
-    vertical-align: 0.5; 
-    horizontal-align: 0.5;
-}
-
-button selected {
-	border-radius: 5px;
-	background-color: @fg-col2;
-    text-color: @selected-col ;
-}
-
-message {
-    background-color: transparent;
-    margin: -20px 2px;
-    padding: 2px;
-    border-radius: 5px;
-}
-
-textbox {
-    padding: 6px;
-    margin: 20px 0px 0px 20px;
-    text-color: @accent;
-    background-color: transparent;
-	horizontal-align: 0.5;
+	border-radius: 0px;
+	background-color: transparent;
+    text-color: @fg-col2 ;
 }

@@ -1,26 +1,18 @@
 configuration {
-	modes: "window,drun,run,ssh,filebrowser";
-	show-icons: true;
-	icon-theme: "Oranchelo";
-	terminal: "wezterm";
-    drun-display-format: "{icon} {name}";
+	modes: "drun,run";
+	show-icons: false;
+	terminal: "alacritty";
+    drun-display-format: "{name}";
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-drun: " ";
-    display-run: " ";
-    display-filebrowser: "󰈔"; /* cannot have a space after or it displays wonky */
-	display-ssh: " ";
-    display-window: "󱂬 ";
-    sidebar-mode: true;
+ 	display-drun: "⟩";
+    display-run: "⟩";
+	sidebar-mode: false;
 
   timeout {
       action: "kb-cancel";
       delay:  0;
-  }
-  filebrowser {
-      directories-first: true;
-      sorting-method:    "name";
   }
 }
 @theme "apocalypse"
