@@ -125,8 +125,6 @@ bindsym $mod+v splitv
 
 bindsym $mod+f fullscreen
 bindsym $mod+t floating toggle
-bindsym $mod+space focus mode_toggle
-bindsym $mod+a focus parent
 
 mode "resize" {
 	bindsym h resize shrink width 10px
