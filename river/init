@@ -46,6 +46,8 @@ device="pointer-2-7-SynPS/2_Synaptics_TouchPad"
 riverctl keyboard-layout gb
 riverctl input $device tap enabled
 riverctl input $device pointer-accel -0.1
+riverctl input $device natural-scroll disabled
+riverctl input $device disable-while-typing enabled
 
 
 # keybinds #################################################################
