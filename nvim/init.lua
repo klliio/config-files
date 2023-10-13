@@ -59,13 +59,22 @@ require('lazy').setup({
         'j-hui/fidget.nvim',
         tag = 'legacy',
         opts = {
+          window = {
+            relative = "editor",
+            blend = 0
+          },
           text = {
             spinner = "pipe", -- animation shown when tasks are ongoing
             done = "✔", -- character shown when all tasks are complete
             commenced = "Started", -- message shown when task starts
             completed = "Completed", -- message shown when task completes
           }
-        }
+        },
+        config = function(_, opts)
+          require('fidget').setup(opts)
+          vim.api.nvim_set_hl(0, 'FidgetTitle', { link = "NormalFloat" })
+          vim.api.nvim_set_hl(0, 'FidgetTask', { link = "NormalFloat" })
+        end
       },
 
       -- Additional lua configuration, makes nvim stuff amazing!
@@ -226,6 +235,16 @@ vim.keymap.set('n', '<C-Right>', ":vertical resize +1<CR>", { silent = true, rem
 
 --color scheme
 vim.cmd.colorscheme 'tokyonight'
+vim.cmd [[
+  hi Normal guibg=none ctermbg=none
+  hi LineNr guibg=none ctermbg=none
+  hi Folded guibg=none ctermbg=none
+  hi NonText guibg=none ctermbg=none
+  hi SpecialKey guibg=none ctermbg=none
+  hi VertSplit guibg=none ctermbg=none
+  hi SignColumn guibg=none ctermbg=none
+  hi EndOfBuffer guibg=none ctermbg=none
+]]
 
 -- [[ Basic Keymaps ]]
 
