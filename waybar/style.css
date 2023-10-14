@@ -57,3 +57,14 @@ tooltip {
 #tags button.urgent {
 	opacity: 1;
 }
+
+#tags button.occupied label {
+	opacity: 0.6;
+}
+
+#tags button:hover label,
+#tags button.focused label,
+#tags button.urgent label {
+	opacity: 1;
+}
+
