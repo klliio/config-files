@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ ! $(pgrep "pipewire") ]; then
 	# run programs
@@ -106,16 +106,16 @@ riverctl declare-mode resize
 riverctl map normal Super+Shift R enter-mode resize
 riverctl map resize None Escape enter-mode normal
 riverctl map resize None Return enter-mode normal
-riverctl map resize None H resize horizontal -100
-riverctl map resize None J resize vertical 100
-riverctl map resize None K resize vertical -100 
-riverctl map resize None L resize horizontal 100
+riverctl map resize Super+Shift H resize horizontal -100
+riverctl map resize Super+Shift J resize vertical 100
+riverctl map resize Super+Shift K resize vertical -100 
+riverctl map resize Super+Shift L resize horizontal 100
 
 # move views
-riverctl map resize Super+Shift H move left 100
-riverctl map resize Super+Shift J move down 100
-riverctl map resize Super+Shift K move up 100
-riverctl map resize Super+Shift L move right 100
+riverctl map resize None H move left 100
+riverctl map resize None J move down 100
+riverctl map resize None K move up 100
+riverctl map resize None L move right 100
 
 # snap views to screen edges
 riverctl map resize Super+Control H snap left
@@ -137,8 +137,8 @@ riverctl map normal Super+Shift K swap previous
 riverctl map normal Super Space zoom
 
 # Super+H and Super+L to decrease/increase the main ratio of rivertile(1)
-riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.05"
-riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.05"
+riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.02"
+riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.02"
 
 # Super+Shift+H and Super+Shift+L to increment/decrement the main count of rivertile(1)
 riverctl map normal Super+Shift H send-layout-cmd rivertile "main-count +1"
@@ -159,5 +159,4 @@ riverctl set-repeat 50 300
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
-rivertile -view-padding 6 -outer-padding 6 &
-
+rivertile -view-padding 6 -outer-padding 6 -main-location left -main-ratio 0.65 &
