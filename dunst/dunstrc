@@ -32,10 +32,10 @@
 	text_icon_padding = 10
 
 	# size of border
-	frame_width = 0
+	frame_width = 2
 
 	# colour of the border
-	frame_color = "#00000000"
+	frame_color = "#e0af68"
 
 	# colour
 	background = "#323143e6"
