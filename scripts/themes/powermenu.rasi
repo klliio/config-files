@@ -9,30 +9,29 @@ configuration {
     fg-col: #cccccc;
     fg-col2: #e0af68;
 
-    width: 500;
     font: "JetBrainsMono Nerd Font 26";
 }
 
 window {
     /* properties for window widget */
-    transparency:                "real";
-    location:                    north east;
-    anchor:                      north east;
-    fullscreen:                  false;
-    width:                       @width;
+    transparency:               "real";
+    location:                   north east;
+    anchor:                     north east;
+    fullscreen:                 false;
 	height:						88px;
-    x-offset:                    -12px;
-    y-offset:                    10px;
+    width: 						500;
+    x-offset:                   -12px;
+    y-offset:                   10px;
 
     /* properties for all widgets */
-    enabled:                     true;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      2px solid;
-    border-radius:               0;
-    border-color:                @border-col;
-    cursor:                      "default";
-    background-color:            transparent;
+    enabled:                    true;
+    margin:                     0px;
+    padding:                    0px;
+    border:                     2px solid;
+    border-radius:              0;
+    border-color:               @border-col;
+    cursor:                     "default";
+    background-color:           transparent;
 }
 
 mainbox {
@@ -48,9 +47,9 @@ mainbox {
 listview {
 	margin: 0 6px 0 0;
 	background-color: transparent;
-	columns: 6;
-	lines: 0;
-	layout: vertical;
+	columns: 0;
+	lines: 6;
+	layout: horizontal;
 	fixed-height: true;
 	fixed-columns: true;
 	spacing: 15px;
