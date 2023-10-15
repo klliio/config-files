@@ -19,7 +19,7 @@ window {
     anchor:                     north east;
     fullscreen:                 false;
 	height:						88px;
-    width: 						500;
+    width: 						380;
     x-offset:                   -12px;
     y-offset:                   10px;
 
@@ -52,12 +52,11 @@ listview {
 	layout: horizontal;
 	fixed-height: true;
 	fixed-columns: true;
-	spacing: 15px;
+	spacing: 40;
 	cycle: true;
 }
 
 element {
-	spacing: 10px;
 	text-color: @fg-col;
 	background-color: transparent;
 }
