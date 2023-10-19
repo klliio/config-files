@@ -1,7 +1,6 @@
 #!/bin/bash
 
 if [ ! $(pgrep "pipewire") ]; then
-	# run programs
 	pipewire &
 	pipewire-pulse &
 	wireplumber &
@@ -21,7 +20,7 @@ if [ ! $(pgrep "blueman-applet") ]; then
 fi
 
 if [ ! $(pgrep "mpd") ]; then
-	mpd --no-daemon $HOME/.config/mpd/mpd.conf &
+	mpd $HOME/.config/mpd/mpd.conf
 fi
 
 if [ ! $(pgrep "syncthing") ]; then
