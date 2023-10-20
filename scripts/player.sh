@@ -3,6 +3,10 @@
 # USAGE ./player.sh [args] [length]
 #  ./player.sh --combined 30
 #
+#  Doesn't correctly show spacing with cjk characters
+#  depending on the output location and font. e.g. waybar,
+#  terminal.
+#
 export LANG=C; LC_ALL=C
 
 if ! command -v playerctl &> /dev/null; then

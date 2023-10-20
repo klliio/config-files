@@ -19,7 +19,7 @@ chosen() {
    	 
     	case "$choice" in
            	"edit")
-				eval "alacritty -e nvim $(sed 's/ /\\ /g' <<< $directory)"
+				eval "cd $(sed 's/ /\\ /g;s/^\(\/.*\/\).*$/\1/' <<< $directory) ; alacritty -e nvim $(sed 's/ /\\ /g;s/^.*\///g' <<< $directory)"
                	;;
           	"rename")
 				file_name=$(ls -ap "$directory" | rofi -dmenu -p "Enter a file name")
