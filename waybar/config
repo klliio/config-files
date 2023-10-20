@@ -10,7 +10,7 @@
 	"fixed-center": true,
 	"exclusive": true,
 	"modules-left": ["sway/workspaces","river/tags"],
-	"modules-center": [],
+	"modules-center": ["custom/player"],
 	"modules-right": ["group/hardware","group/time","group/misc"],
 	"sway/workspaces": {
 		"disable-scroll": true,
