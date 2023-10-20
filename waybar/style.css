@@ -29,13 +29,16 @@ tooltip {
 	color: #999999;
 }
 
-#misc, #hardware, #workspaces, #time, #custom-player, #window {
+#misc, #hardware, #workspaces, #time, #window, #custom-player {
 	padding: 5px 2px;
 	margin: 0 2px;
 	border-radius: 3px;
 	background: alpha(#16161e,0.8);
 }
 
+#custom-player {
+	font-size: 28px;
+}
 
 #custom-power, #battery, #network, #backlight, #wireplumber, #workspaces {
 	padding-right: 8px;

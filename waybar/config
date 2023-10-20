@@ -10,8 +10,8 @@
 	"fixed-center": true,
 	"exclusive": true,
 	"modules-left": ["sway/workspaces","river/tags"],
-	"modules-center": ["custom/player"],
-	"modules-right": ["group/hardware","group/time","group/misc"],
+	"modules-center": [],
+	"modules-right": ["group/hardware","group/time","group/misc","custom/player"],
 	"sway/workspaces": {
 		"disable-scroll": true,
 		"warp-on-scroll": false,
@@ -136,10 +136,10 @@
 	},
 
 	"custom/player":{
-		"exec":"~/.config/scripts/player.sh --title 30",
+		"exec":"~/.config/scripts/player.sh --status-icon",
 		"on-click":"~/.config/scripts/player-controls.sh --toggle",
-		"format":"{:33}", // needs to be 3 higher than in exec
-		"interval":2,
+		"format":"{:1}", // needs to be 3 higher than in exec unless the output is a single character
+		"interval":1,
 		"tooltip":false,
 	},
 }
