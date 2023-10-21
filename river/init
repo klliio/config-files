@@ -74,6 +74,7 @@ riverctl map normal Super Return spawn 'alacritty'
 riverctl map normal None Print spawn '~/.config/scripts/rofi-grim.sh'
 riverctl map normal Super U spawn '~/.config/scripts/script-manager.sh'
 riverctl map normal Super E spawn '~/.config/scripts/file-editor.sh'
+riverctl map normal Super V spawn '~/.config/scripts/wireguard.sh'
 
 # workspaces/tags
 for i in $(seq 1 9)
