@@ -8,7 +8,7 @@ if [ "$cmd" != "" ] ; then
 
 	case "$option" in
 		"edit") eval "cd $script_dir ; alacritty -e nvim $script_dir$cmd" ;;
-		"run") eval "$script_dir$cmd" ;;
+		"run") "$script_dir$cmd" ;;
 		*) exit 1 ;;
 	esac
 else
