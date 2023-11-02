@@ -31,6 +31,10 @@ if [ ! $(pgrep "udisksd") ]; then
 	udiskie --automount --notify &
 fi
 
+if [ ! $(pgrep -f "/usr/libexec/polkit-gnome-authentication-agent-1 &") ]; then
+	/usr/libexec/polkit-gnome-authentication-agent-1 &
+fi
+
 ~/.config/waybar/launch
 
 # set keyboard layout and gtk
