@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 wireguard_dir="/etc/wireguard/"
 cmd=$(ls $wireguard_dir | grep "conf" | sed 's/.conf//' | rofi -dmenu -p "Choose a server")

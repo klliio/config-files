@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # usage player-controls.sh [option]
 # 			--[prev/next]

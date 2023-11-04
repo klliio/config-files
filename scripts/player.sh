@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # USAGE ./player.sh [args] [length]
 #  ./player.sh --combined 30
@@ -16,7 +16,7 @@
 
 export LANG=C; LC_ALL=C
 
-if ! command -v playerctl &> /dev/null; then
+if ! command -v playerctl 1> /dev/null 2> /dev/null; then
     echo "playerctl is not installed."
     exit 1
 fi
@@ -27,7 +27,7 @@ mpris_icon=""
 status_play="󰐊"
 status_pause="󰏤"
 title() {
-	if pgrep -x "$mpd_client" > /dev/null; then
+	if pgrep -x "$mpd_client" 1> /dev/null 2> /dev/null; then
 		mpc -f %albumartist%\ -\ %title% | sed -n '1p' 2> /dev/null | sed 's/VEVO//g'
 	else
 		playerctl metadata --format "{{ artist }} - {{ title }}" 2> /dev/null | sed 's/VEVO//g'
@@ -35,16 +35,16 @@ title() {
 }
 
 icon() {
-	if pgrep -x "$mpd_client" > /dev/null; then
+	if pgrep -x "$mpd_client" 1> /dev/null 2> /dev/null; then
 		echo "$mpd_icon"
 	else
 		echo "$mpris_icon"
 	fi
 }
 
-mpris="`playerctl status`"
-mpd="`mpc status %state%`"
-if [ "$mpris" == "Playing" ] || [ "$mpd" == "playing" ] ; then
+mpris="$(playerctl status)"
+mpd="$(mpc status %state%)"
+if [ "$mpris" = "Playing" ] || [ "$mpd" = "playing" ] ; then
 	case "$1" in
 		--icon) song="$(icon)" ;;
 		--title) song="$(title)" ;;
@@ -61,13 +61,13 @@ else
 	esac
 fi
 
-if [[ -n "$song" ]]; then
-	if [ ! -z "$2" ]; then
+if [ -n "$song" ]; then
+	if [ -n "$2" ]; then
 		if [ ${#song} -gt "$2" ]; then
-			song="${song:0:"$2"}..."
+			song="$(printf "$song" | cut -c 1-"$2")..."
 		else
 			str_diff=$(($2/2-${#song}/2))
-			song=$(awk -v x="$str_diff" '{printf "%" x "s%s" , "", $0}' <<< "$song")
+			song=$(printf "$song" | awk -v x="$str_diff" '{printf "%" x "s%s" , "", $0}')
 		fi
 	fi
 
