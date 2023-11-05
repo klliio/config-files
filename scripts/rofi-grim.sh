@@ -8,9 +8,6 @@ scrshotDir="$HOME/Images/Screenshots/"
 
 while true; do
     # Use Rofi prompt to ask for a file name
-	
-	# hard to read
-	# file_name=$(ls "$scrshotDir" | while read A ; do 	echo -en "$A\x00icon\x1f$scrshotDir$A\n" ; done | sed -E 's/\.[a-zA-Z]+\x00/\x00/' | rofi -dmenu -p "Enter file name")
 	file_name=$(ls "$scrshotDir" | sed -E 's/\.[a-zA-Z]*//' | rofi -dmenu -p "Enter file name")
     # Check if a file name was entered
     if [ -z "$file_name" ]; then
