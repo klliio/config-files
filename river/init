@@ -8,7 +8,7 @@ if [ ! $(pgrep "pipewire") ]; then
 fi
 
 if [ ! $(pgrep "easyeffects") ]; then
-	easyeffects -l Heavy Bass --gapplication-service
+	easyeffects --gapplication-service &
 fi
 
 if [ ! $(pgrep "wbg") ]; then
