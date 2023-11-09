@@ -15,8 +15,8 @@ if [ ! $(pgrep "wbg") ]; then
 	wbg ~/Images/apocalypse.png &
 fi
 
-if [ ! $(pgrep "dunst") ]; then
-	dunst &
+if [ ! $(pgrep "mako") ]; then
+	mako &
 fi
 
 if [ ! $(pgrep "blueman-applet") ]; then

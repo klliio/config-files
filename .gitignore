@@ -23,6 +23,8 @@
 !rofi/**
 !scripts/
 !scripts/**
+!scripts/*/target/*
+!scripts/*/target/**
 !dunst/
 !dunst/**
 !ncmpcpp/
@@ -37,3 +39,5 @@
 !swaylock/**
 !river/
 !river/**
+!mako/
+!mako/**
