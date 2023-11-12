@@ -54,7 +54,7 @@ return {
 			style = "night",
 			light_style = "day",
 			transparent = false,
-			terminal_colors = true,
+			terminal_colors = false,
 			styles = {
 				-- Style to be applied to different syntax groups
 				-- Value is any valid attr-list value for `:help nvim_set_hl`
