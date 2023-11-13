@@ -232,6 +232,9 @@ vim.keymap.set('n', '<C-Down>', ":resize +1<CR>", { silent = true, remap = false
 vim.keymap.set('n', '<C-Left>', ":vertical resize -1<CR>", { silent = true, remap = false })
 vim.keymap.set('n', '<C-Right>', ":vertical resize +1<CR>", { silent = true, remap = false })
 
+-- markdown previewer
+vim.keymap.set('n', '<leader>m', ":Glow<CR>", { silent = true, remap = false })
+
 
 --color scheme
 vim.cmd.colorscheme 'tokyonight'
