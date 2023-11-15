@@ -7,9 +7,9 @@ if [ ! $(pgrep "pipewire") ]; then
 
 fi
 
-if [ ! $(pgrep "easyeffects") ]; then
-	easyeffects --gapplication-service &
-fi
+# if [ ! $(pgrep "easyeffects") ]; then
+# 	easyeffects --gapplication-service &
+# fi
 
 if [ ! $(pgrep "wbg") ]; then
 	wbg ~/Images/apocalypse.png &
