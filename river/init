@@ -164,6 +164,10 @@ riverctl background-color 0x002b36
 riverctl border-color-focused 0xe0af68
 riverctl border-color-unfocused 0xffffff00
 
+# floating windows
+riverctl float-filter-add app-id 'imv'
+riverctl float-filter-add app-id 'mpv'
+
 # Set keyboard repeat rate
 riverctl set-repeat 50 300
 
