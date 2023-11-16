@@ -52,8 +52,8 @@ selection=$(printf "Region\nFullscreen" | rofi -dmenu -p "Selection type")
 case "$selection" in
 	"Region") 
 		# use slurp to get the selection area
-		wf-recorder --geometry "$(slurp)" -f "$screencapture_dir$file_name.mp4" --framerate 60 ;;
-	"Fullscreen") wf-recorder -f "$screencapture_dir$file_name.mp4" --framerate 60 ;;
+		wf-recorder --geometry "$(slurp)" -f "$screencapture_dir$file_name.mp4" --no-damage --framerate 60 ;;
+	"Fullscreen") wf-recorder -f "$screencapture_dir$file_name.mp4" --no-damage --framerate 60 ;;
 		*) exit 1 ;;
 esac
 notify-send -a rofi-wf-recorder "Screen Capture" "Started capture as $file_name.mp4"
