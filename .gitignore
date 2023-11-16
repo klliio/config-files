@@ -11,8 +11,6 @@
 !polybar/**
 !picom/
 !picom/**
-!htop/
-!htop/**
 !bspwm/
 !bspwm/**
 !sxhkd/
