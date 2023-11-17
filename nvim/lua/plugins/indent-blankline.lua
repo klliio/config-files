@@ -1,11 +1,15 @@
 return {
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    opts = {
-      indent_blankline_max_indent_increase = 1,
-    },
-    config = function(_, opts)
-      require("indent_blankline").setup(opts)
-    end
-  }
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {
+			debounce = 100,
+			indent = {
+				char = '┃',
+			},
+		},
+		config = function(_, opts)
+			require("ibl").setup(opts)
+		end
+	}
 }
