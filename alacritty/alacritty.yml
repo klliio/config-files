@@ -1,6 +1,6 @@
 import:
-# - ~/.config/alacritty/catppuccin.yml
-  - ~/.config/alacritty/tokyonight.yml
+- ~/.config/alacritty/catppuccin.yml
+# - ~/.config/alacritty/tokyonight.yml
 
 font:
   normal:

@@ -30,7 +30,7 @@ return {
 				},
 				indent_blankline = {
 					enabled = true,
-					colored_indent_levels = false,
+					colored_indent_levels = true,
 				},
 				telescope = true,
 				treesitter = true,

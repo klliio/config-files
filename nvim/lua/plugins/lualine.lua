@@ -6,17 +6,17 @@ return { {
 		-- Color table for highlights
 		-- stylua: ignore
 		local colors = {
-			bg       = '#1a1b26',
-			fg       = '#c0caf5',
-			yellow   = '#e0af68',
-			cyan     = '#7dcfff',
-			darkblue = '#3d59a1',
-			green    = '#9ece6a',
-			orange   = '#ff9e64',
-			violet   = '#bb9af7',
-			magenta  = '#bb9af7',
-			blue     = '#7aa2f7',
-			red      = '#f7768e',
+			bg       = none,
+			fg       = '#cdd6f4',
+			yellow   = '#f9e2af',
+			cyan     = '#89dceb',
+			darkblue = '#74c7ec',
+			green    = '#a6e3a1',
+			orange   = '#fab387',
+			violet   = '#cba6f7',
+			magenta  = '#f5c2e7',
+			blue     = '#89b4fa',
+			red      = '#f38ba8',
 		}
 
 		local conditions = {
@@ -36,6 +36,7 @@ return { {
 		-- Config
 		local config = {
 			options = {
+				globalstatus = true,
 				-- Disable sections and component separators
 				component_separators = '',
 				section_separators = '',
@@ -129,42 +130,7 @@ return { {
 			},
 		}
 
-		-- Insert mid section. You can make any number of sections in neovim :)
-		-- for lualine it's any number greater then 2
-		ins_left {
-			function()
-				return '%='
-			end,
-		}
-
-		ins_left {
-			-- Lsp server name .
-			function()
-				local msg = 'No Lsp'
-				local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-				local clients = vim.lsp.get_active_clients()
-				if next(clients) == nil then
-					return msg
-				end
-				for _, client in ipairs(clients) do
-					local filetypes = client.config.filetypes
-					if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-						return client.name
-					end
-				end
-				return msg
-			end,
-			color = { fg = colors.fg, gui = 'bold' },
-		}
-
-		ins_left {
-			function()
-				return '|'
-			end,
-			color = { fg = colors.fg, gui = 'bold' },
-		}
-
-		ins_left {
+		ins_right {
 			'branch',
 			icon = '',
 			color = { fg = colors.fg, gui = 'bold' },
@@ -192,6 +158,26 @@ return { {
 
 		ins_right {
 			'location',
+			color = { fg = colors.fg },
+		}
+
+		ins_right {
+			-- Lsp server name .
+			function()
+				local msg = 'No Lsp'
+				local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+				local clients = vim.lsp.get_active_clients()
+				if next(clients) == nil then
+					return msg
+				end
+				for _, client in ipairs(clients) do
+					local filetypes = client.config.filetypes
+					if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+						return client.name
+					end
+				end
+				return msg
+			end,
 			color = { fg = colors.fg },
 		}
 

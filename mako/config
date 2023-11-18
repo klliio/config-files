@@ -9,9 +9,9 @@ on-notify=none
 
 font=UbuntuMono\ Nerd\ Font 8
 
-background-color=#323143e6
-text-color=#cccccc
-border-color=#e0af68
+background-color=#1e1e2ee6
+text-color=#cdd6f4
+border-color=#cba6f7
 progress-color=over #ffffff
 
 width=280

@@ -7,37 +7,23 @@ if [ ! $(pgrep "pipewire") ]; then
 
 fi
 
-# if [ ! $(pgrep "easyeffects") ]; then
+pkill "easyeffects"
+pkill "wbg"
+pkill "mako"
+pkill "blueman-applet"
+pkill "mpd"
+pkill "syncthing"
+pkill "udisksd"
+pkill -f "/usr/libexec/polkit-gnome-authentication-agent-1 &"
+
 # 	easyeffects --gapplication-service &
-# fi
-
-if [ ! $(pgrep "wbg") ]; then
-	wbg ~/Images/apocalypse.png &
-fi
-
-if [ ! $(pgrep "mako") ]; then
-	mako &
-fi
-
-if [ ! $(pgrep "blueman-applet") ]; then
-	blueman-applet &
-fi
-
-if [ ! $(pgrep "mpd") ]; then
-	mpd $HOME/.config/mpd/mpd.conf
-fi
-
-if [ ! $(pgrep "syncthing") ]; then
-	/usr/bin/syncthing serve --no-browser --logfile=default &
-fi
-
-if [ ! $(pgrep "udisksd") ]; then
-	udiskie --automount --notify &
-fi
-
-if [ ! $(pgrep -f "/usr/libexec/polkit-gnome-authentication-agent-1 &") ]; then
-	/usr/libexec/polkit-gnome-authentication-agent-1 &
-fi
+wbg ~/Images/apocalypse.png &
+mako &
+blueman-applet &
+mpd $HOME/.config/mpd/mpd.conf
+/usr/bin/syncthing serve --no-browser --logfile=default &
+udiskie --automount --notify &
+/usr/libexec/polkit-gnome-authentication-agent-1 &
 
 ~/.config/waybar/launch
 
@@ -161,7 +147,7 @@ riverctl focus-follows-cursor always
 
 # Set background and border color
 riverctl background-color 0x002b36
-riverctl border-color-focused 0xe0af68
+riverctl border-color-focused 0xcba6f7
 riverctl border-color-unfocused 0xffffff00
 
 # floating windows

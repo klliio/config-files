@@ -111,30 +111,6 @@ require('lazy').setup({
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
 
-      -- Useful status updates for LSP
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      {
-        'j-hui/fidget.nvim',
-        tag = 'legacy',
-        opts = {
-          window = {
-            relative = "editor",
-            blend = 0
-          },
-          text = {
-            spinner = "pipe", -- animation shown when tasks are ongoing
-            done = "✔", -- character shown when all tasks are complete
-            commenced = "Started", -- message shown when task starts
-            completed = "Completed", -- message shown when task completes
-          }
-        },
-        config = function(_, opts)
-          require('fidget').setup(opts)
-          vim.api.nvim_set_hl(0, 'FidgetTitle', { link = "NormalFloat" })
-          vim.api.nvim_set_hl(0, 'FidgetTask', { link = "NormalFloat" })
-        end
-      },
-
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
     },
@@ -237,7 +213,7 @@ vim.keymap.set('n', '<leader>m', ":Glow<CR>", { silent = true, remap = false })
 
 
 --color scheme
-vim.cmd.colorscheme 'tokyonight'
+vim.cmd.colorscheme 'catppuccin'
 vim.cmd [[
   hi Normal guibg=none ctermbg=none
   hi LineNr guibg=none ctermbg=none

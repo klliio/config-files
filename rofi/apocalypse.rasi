@@ -1,9 +1,9 @@
 * {
-    bg-col:  #16161ee6;
-    selected-col: #424153;
-    accent: #e0af68e6;
-    fg-col: #cccccc;
-    fg-col2: #e0af68;
+    bg-col:  #1e1e2ee6;
+    selected-col: #cba6f7;
+    accent: #cba6f7e6;
+    fg-col: #cdd6f4;
+    fg-col2: #cba6f7;
 
 	padding: 0;
 	margin: 0;
