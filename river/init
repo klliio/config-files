@@ -59,8 +59,8 @@ riverctl map normal None XF86AudioPause spawn '~/.config/scripts/player-controls
 riverctl map normal None XF86AudioPrev spawn '~/.config/scripts/player-controls.sh --prev'
 riverctl map normal None XF86AudioNext spawn '~/.config/scripts/player-controls.sh --next'
 
-riverctl map normal Super F2 spawn 'brightnessctl s 12000-'
-riverctl map normal Super F3 spawn 'brightnessctl s 12000+'
+riverctl map normal Super F2 spawn 'brightnessctl s 5%-'
+riverctl map normal Super F3 spawn 'brightnessctl s 5%+'
 
 riverctl map normal Super P spawn 'rofi -show drun'
 riverctl map normal Super R spawn 'rofi -show run'
