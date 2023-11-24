@@ -144,6 +144,9 @@ riverctl map normal Super+Shift L send-layout-cmd rivertile "main-count -1"
 # config ###################################################################
 
 riverctl focus-follows-cursor always
+riverctl hide-cursor timeout 0
+riverctl hide-cursor when-typing disabled
+riverctl set-cursor-warp on-focus-change
 
 # Set background and border color
 riverctl background-color 0x002b36
