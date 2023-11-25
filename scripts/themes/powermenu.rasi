@@ -21,7 +21,7 @@ window {
 	height:						88px;
     width: 						380;
     x-offset:                   -12px;
-    y-offset:                   10px;
+    y-offset:                   38px;
 
     /* properties for all widgets */
     enabled:                    true;
@@ -52,13 +52,14 @@ listview {
 	layout: horizontal;
 	fixed-height: true;
 	fixed-columns: true;
-	spacing: 40;
+	spacing: 28;
 	cycle: true;
 }
 
 element {
 	text-color: @fg-col;
 	background-color: transparent;
+	width: 32px;
 }
 
 element-text {
