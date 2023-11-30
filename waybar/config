@@ -1,17 +1,18 @@
-// 1920x1080
+// works on 1920x1080
+// should work on other sizes
+
 {
 	"name": "main",
 	"layer": "top",
-	"width": 1894,
 	"height": 10,
 	"margin-top": 5,
 	"margin-bottom": -10,
-	"spacing": 6,
+	"spacing": 0,
 	"fixed-center": true,
 	"exclusive": true,
-	"modules-left": ["sway/workspaces","river/tags"],
+	"modules-left": ["custom/spacer","sway/workspaces","river/tags"],
 	"modules-center": [],
-	"modules-right": ["group/hardware","group/time","group/misc","custom/player"],
+	"modules-right": ["group/hardware","group/time","group/misc","custom/player","custom/spacer"],
 	"sway/workspaces": {
 		"disable-scroll": true,
 		"warp-on-scroll": false,
@@ -66,7 +67,7 @@
 		"orientation":"horizontal",
 		"modules":[
 			"backlight",
-			"custom/sep",
+			"custom/separator",
 			"wireplumber",
 		],
 	},
@@ -87,12 +88,12 @@
 		"orientation":"horizontal",
 		"modules":[
 		"clock",
-		"custom/sep",
+		"custom/separator",
 		"clock#date",
 	],
 	},
 
-	"custom/sep": {
+	"custom/separator": {
 		"return-type": "",
 		"format": "{}|",
 		"tooltip": false,
@@ -141,5 +142,11 @@
 		"format":"{:1}", // needs to be 3 higher than in exec unless the output is a single character
 		"interval":1,
 		"tooltip":false,
+	},
+	
+	"custom/spacer":{
+		"return-type": "",
+		"format": "{} ",
+		"tooltip": false,
 	},
 }
