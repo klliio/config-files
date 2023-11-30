@@ -39,3 +39,5 @@
 !river/**
 !mako/
 !mako/**
+!newsboat/
+!newsboat/**
