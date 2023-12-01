@@ -1,3 +1,14 @@
- https://gitlab.com/veloren/veloren.atom
- https://gitlab.com/veloren/airshipper.atom
- https://github.com/klliio/config-files/commits.atom
+ # Veloren
+ https://gitlab.com/veloren/veloren/-/merge_requests.atom "Veloren"
+ https://gitlab.com/veloren/airshipper/-/merge_requests.atom "Veloren"
+
+# Config Changes
+https://github.com/klliio/config-files/commits.atom "~Config Commits"
+
+# Dwarf Fortress
+https://www.bay12games.com/dwarves/dev_now.rss "Dwarf Fortress"
+https://www.bay12games.com/dwarves/dev_release.rss "Dwarf Fortress"
+
+# CDDA
+https://github.com/CleverRaven/Cataclysm-DDA/releases.atom "CDDA"
+
