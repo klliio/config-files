@@ -11,7 +11,7 @@
 # Take a screenshot using grim command and save it with a temporary file name
 tmp_file=$(mktemp /tmp/screenshot_XXXXXX.jpg)
 
-selection=$(printf "Region\nFullscreen" | rofi -dmenu -p "Selection type")
+selection=$(printf "Fullscreen\nRegion" | rofi -dmenu -p "Selection type")
 case "$selection" in
 	"Region") 
 		# use slurp to get the selection area
