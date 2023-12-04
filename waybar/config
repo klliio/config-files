@@ -5,35 +5,36 @@
 	"name": "main",
 	"layer": "top",
 	"height": 10,
+	"width": 1890, //depends on the display size
 	"margin-top": 5,
 	"margin-bottom": -10,
 	"spacing": 0,
 	"fixed-center": true,
 	"exclusive": true,
-	"modules-left": ["custom/spacer","sway/workspaces","river/tags"],
-	"modules-center": [],
-	"modules-right": ["group/hardware","group/time","group/misc","custom/player","custom/spacer"],
-	"sway/workspaces": {
-		"disable-scroll": true,
-		"warp-on-scroll": false,
-		"format": "{icon}",
-		"format-icons": {
-			"urgent": "󰗖",
-			"focused": "",
-			"default": "",
-		},
-		"persistent_workspaces": {
-			"1": [],
-			"2": [],
-			"3": [],
-			"4": [],
-			"5": [],
-			"6": [],
-			"7": [],
-			"8": [],
-			"9": [],
-		},
-		"sort-by-number": true
+	"modules-left": ["custom/spacer","river/tags"],
+	"modules-center": ["custom/player"],
+	"modules-right": ["group/hardware","custom/separator","group/misc","custom/separator","clock","custom/spacer"],
+
+	"group/hardware": {
+		"orientation": "horizontal",
+		"modules": [
+			"backlight",
+			"wireplumber",
+		],
+	},
+	"group/misc": {
+		"orientation": "horizontal",
+		"modules": [
+			"custom/power",
+			"battery",
+			"network",
+			"keyboard-state",
+		],
+	},
+
+	"river/tags": {
+		"num-tags":9,
+		"disable-click":false,
 	},
 	"backlight": {
 		"device": "intel_backlight",
@@ -45,10 +46,6 @@
 			"󰃠"
 		],
 		"tooltip": false,
-	},
-	"river/tags":{
-		"num-tags":9,
-		"disable-click":false,
 	},
 	"wireplumber": {
 		"format": " {icon} {volume:3}%",
@@ -62,41 +59,27 @@
 		],
 		"tooltip": false,
 	},
-
-	"group/hardware":{
-		"orientation":"horizontal",
-		"modules":[
-			"backlight",
-			"custom/separator",
-			"wireplumber",
-		],
-	},
 	"clock": {
 		"interval": 10,
 		"format": "{:%H:%M}",
 		"timezone": "Europe/London",
 		"tooltip": true,
 	},
-		"clock#date": {
-		"interval": 10,
-		"format": "{:%Y/%m/%d}",
-		"timezone": "Europe/London",
-		"tooltip": true,
-	},
-
-	"group/time":{
-		"orientation":"horizontal",
-		"modules":[
-		"clock",
-		"custom/separator",
-		"clock#date",
-	],
-	},
-
 	"custom/separator": {
 		"return-type": "",
 		"format": "{}|",
 		"tooltip": false,
+	},
+	"keyboard-state": {
+    	"numlock": true,
+    	"capslock": false,
+		"device-path": "/dev/input/event0",
+		"binding-keys": [58,69],
+    	"format": "{icon}",
+    	"format-icons": {
+        	"locked": " ",
+        	"unlocked": " "
+    	},
 	},
 	"custom/power": {
 		"on-click": "~/.config/scripts/powermenu.sh",
@@ -127,19 +110,10 @@
 		"tooltip": true,
 		"tooltip-format": " {bandwidthUpBits}\n {bandwidthDownBits}",
 	},
-	"group/misc": {
-		"orientation": "horizontal",
-		"modules": [
-			"custom/power",
-			"battery",
-			"network",
-		]
-	},
-
 	"custom/player":{
-		"exec":"~/.config/scripts/player.sh --status-icon",
+		"exec":"~/.config/scripts/player.sh --title 38",
 		"on-click":"~/.config/scripts/player-controls.sh --toggle",
-		"format":"{:1}", // needs to be 3 higher than in exec unless the output is a single character
+		"format":"{:38}", // needs to be 3 higher than in exec unless the output is a single character
 		"interval":1,
 		"tooltip":false,
 	},

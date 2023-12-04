@@ -1,16 +1,25 @@
+@define-color base       #1e1e2e ;
+@define-color text       #cdd6f4 ;
+@define-color subtext    #a6adc8 ;
+@define-color purple     #cba6f7 ;
+@define-color yellow     #f9e2af ;
+@define-color red        #f38ba8 ;
+@define-color blue       #74c7ec ;
+
 * {
 	font-family: UbuntuMono Nerd Font;
 	font-weight: 600;
-	font-size: 21px;
+	font-size: 19px;
 	/* background-color: red; */
 	background: transparent;
-	color: #cccccc;
+	color: @text;
 	padding: 0;
 	margin: 0;
 }
 
-#workspaces button label, #tags button label {
-	font-size: 25px;
+#waybar {
+	background: @base;
+	border-radius: 5px
 }
 
 button:hover {
@@ -20,54 +29,29 @@ button:hover {
 }
 
 tooltip {
-	border-radius: 3px;
 	border: 1px solid #abbcda;
-	background: alpha(#16161e,0.9);
+	background: alpha(@base,0.9);
 }
 
 #custom-separator {
-	color: #999999;
-}
-
-#misc, #hardware, #workspaces, #time, #window, #custom-player {
-	padding: 5px 2px;
-	margin: 0 2px;
-	border-radius: 3px;
-	background: alpha(#16161e,0.8);
-}
-
-#custom-player {
-	font-size: 28px;
-}
-
-#custom-power, #battery, #network, #backlight, #wireplumber, #workspaces {
-	padding-right: 8px;
-}
-
-#clock, #clock.date, #custom-player {
-	padding: 0 8px;
-}
-
-#tags button {
-	background: alpha(#16161e,0.8);
-	border-radius: 3px;
-	opacity: 0.5;
-}
-
-#tags button:hover,
-#tags button.occupied,
-#tags button.focused,
-#tags button.urgent {
-	opacity: 1;
+	color: @subtext;
+	margin: 0 5px;
 }
 
 #tags button.occupied label {
+	background: alpha(@purple, 0.9);
 	opacity: 0.6;
+	color: @base
 }
 
 #tags button:hover label,
 #tags button.focused label,
 #tags button.urgent label {
-	opacity: 1;
+	background: @purple;
+	opacity: 0.8;
+	color: @base
 }
 
+#misc * {
+	padding: 0 2px;
+}
