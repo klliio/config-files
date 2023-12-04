@@ -13,7 +13,7 @@
 	"exclusive": true,
 	"modules-left": ["custom/spacer","river/tags"],
 	"modules-center": ["custom/player"],
-	"modules-right": ["group/hardware","custom/separator","group/misc","custom/separator","clock","custom/spacer"],
+	"modules-right": ["group/hardware","custom/separator","group/misc","custom/separator","clock","custom/separator","custom/power","custom/spacer"],
 
 	"group/hardware": {
 		"orientation": "horizontal",
@@ -25,9 +25,8 @@
 	"group/misc": {
 		"orientation": "horizontal",
 		"modules": [
-			"custom/power",
-			"battery",
 			"network",
+			"battery",
 			"keyboard-state",
 		],
 	},
@@ -77,13 +76,13 @@
 		"binding-keys": [58,69],
     	"format": "{icon}",
     	"format-icons": {
-        	"locked": " ",
-        	"unlocked": " "
+        	"locked": "",
+        	"unlocked": ""
     	},
 	},
 	"custom/power": {
 		"on-click": "~/.config/scripts/powermenu.sh",
-		"format": " ⏻ ",
+		"format": "⏻ ",
 		"tooltip": false,
 	},
 	"battery": {
