@@ -3,18 +3,8 @@
 
 #exceptions
 !.gitignore
-!wezterm/
-!wezterm/**
 !nvim/
 !nvim/**
-!polybar/
-!polybar/**
-!picom/
-!picom/**
-!bspwm/
-!bspwm/**
-!sxhkd/
-!sxhkd/**
 !alacritty/
 !alacritty/**
 !rofi/
@@ -23,18 +13,12 @@
 !scripts/**
 !scripts/*/target/*
 !scripts/*/target/**
-!dunst/
-!dunst/**
 !ncmpcpp/
 !ncmpcpp/config
 !mpd/
 !mpd/mpd.conf
-!sway/
-!sway/**
 !waybar/
 !waybar/**
-!swaylock/
-!swaylock/**
 !river/
 !river/**
 !mako/
