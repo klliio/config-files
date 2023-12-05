@@ -27,7 +27,7 @@ mpris_icon=""
 status_play="󰐊"
 status_pause="󰏤"
 title() {
-	if pgrep -x "$mpd_client" 1> /dev/null 2> /dev/null; then
+	if [ "$mpd" = "playing" ] ; then
 		mpc -f %albumartist%\ -\ %title% | sed -n '1p' 2> /dev/null | sed 's/VEVO//g'
 	else
 		playerctl metadata --format "{{ artist }} - {{ title }}" 2> /dev/null | sed 's/VEVO//g'
