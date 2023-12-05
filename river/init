@@ -51,8 +51,8 @@ riverctl map normal Super W close
 riverctl map normal Super+Shift Delete spawn '~/.config/scripts/powermenu.sh'
 
 riverctl map normal None XF86AudioMute spawn 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
-riverctl map normal None XF86AudioLowerVolume spawn '~/.config/scripts/volume-control.sh --decrease'
-riverctl map normal None XF86AudioRaiseVolume spawn '~/.config/scripts/volume-control.sh --increase'
+riverctl map normal None XF86AudioLowerVolume spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-'
+riverctl map normal None XF86AudioRaiseVolume spawn 'wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+'
 
 riverctl map normal None XF86AudioPlay spawn '~/.config/scripts/player-controls.sh --toggle'
 riverctl map normal None XF86AudioPause spawn '~/.config/scripts/player-controls.sh --toggle'
