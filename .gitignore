@@ -24,4 +24,5 @@
 !mako/
 !mako/**
 !newsboat/
-!newsboat/**
+!newsboat/config
+!newsboat/dark
