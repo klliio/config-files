@@ -15,7 +15,7 @@ mpd_crossfade_time = 5
 ## %l - length
 ## %f - filename
 ## %D - directory
-## %a - artist
+## %A - artist
 ## %A - album artist
 ## %t - title
 ## %b - album
@@ -32,7 +32,7 @@ mpd_crossfade_time = 5
 ##
 ## If you want to make sure that a part of the format is displayed only when
 ## certain tags are present, you can archieve it by grouping them with brackets,
-## e.g. '{%a - %t}' will be evaluated to 'ARTIST - TITLE' if both tags are
+## e.g. '{%A - %t}' will be evaluated to 'ARTIST - TITLE' if both tags are
 ## present or '' otherwise.  It is also possible to define a list of
 ## alternatives by providing several groups and separating them with '|',
 ## e.g. '{%t}|{%f}' will be evaluated to 'TITLE' or 'FILENAME' if the former is
@@ -70,19 +70,33 @@ mpd_crossfade_time = 5
 ## scheme is described below in section about color definitions), it can be done
 ## with the syntax $(COLOR), e.g. to set the artist tag to one of the
 ## non-standard colors and make it have yellow background, you need to write
-## $(197_yellow)%a$(end). Note that for standard colors this is interchangable
+## $(197_yellow)%A$(end). Note that for standard colors this is interchangable
 ## with attributes listed above.
 ##
 ## Note: colors can be nested.
 ##
 
-song_list_format = {%a - }{%t}|{$8%f$9}$R{$3%l$9}
-song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
+song_list_format = {%A - }{%t}|{$8%f$9}$R{$3%l$9}
+song_status_format = {{%A{ "%b"{ (%y)}} - }{%t}}|{%f}
 song_library_format = {%n - }{%t}|{%f}
 media_library_primary_tag = album_artist
 
 browser_sort_mode = name
-browser_sort_format = {%a - }{%t}|{%f} {%l}
+browser_sort_format = {%A - }{%t}|{%f} {%l}
+browser_playlist_prefix = "$2playlist$9 "
+
+current_item_prefix = $(white)$r
+current_item_suffix = $/r$(end)
+current_item_inactive_column_prefix = $(white)$r
+current_item_inactive_column_suffix = $/r$(end)
+
+now_playing_prefix = $b
+now_playing_suffix = $/b
+
+selected_item_prefix = $6
+selected_item_suffix = $9
+
+modified_item_prefix = $3> $9
 
 ##### columns settings #####
 ##
@@ -119,7 +133,7 @@ browser_sort_format = {%a - }{%t}|{%f} {%l}
 ##   available.
 ##
 #
-#song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+song_columns_list_format = (20)[white]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[red]{l}
 #
 ##### various settings #####
 #
@@ -154,7 +168,7 @@ playlist_separate_albums = no
 #
 #discard_colors_if_item_is_selected = yes
 #
-show_duplicate_tags = yes
+show_duplicate_tags = no
 
 incremental_seeking = yes
 
@@ -380,37 +394,36 @@ mouse_support = no
 ## are used there is a possibility that you'll be able to use only colors with
 ## transparent background.
 #
-#colors_enabled = yes
+colors_enabled = yes
 #
-#empty_tag_color = cyan
+empty_tag_color = cyan
 #
-#header_window_color = default
+header_window_color = white
 #
-#volume_color = default
+volume_color = white:b
 #
-#state_line_color = default
+state_line_color = white
 #
-#state_flags_color = default:b
+state_flags_color = white:b
 #
-#main_window_color = yellow
+main_window_color = white
 #
-#color1 = white
+color1 = white
 #
-#color2 = green
+color2 = magenta
 #
-#progressbar_color = black:b
+progressbar_color = black:b
 #
-#progressbar_elapsed_color = green:b
+progressbar_elapsed_color = white:b
 #
-#statusbar_color = default
+statusbar_color = white
 #
-#statusbar_time_color = default:b
+statusbar_time_color = white:b
 #
-#player_state_color = default:b
+player_state_color = white:b
 #
 #alternative_ui_separator_color = black:b
 #
 #window_border_color = green
 #
-#active_window_border = red
-#
+#active_window_border = ragenta
