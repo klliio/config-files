@@ -141,7 +141,7 @@ song_columns_list_format = (20)[white]{a} (6f)[green]{NE} (50)[white]{t|f:Title}
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-#execute_on_song_change = ""
+execute_on_song_change = "/home/klliio/.config/scripts/mpd-notification.sh"
 #
 ##
 ## Note: Custom command that will be executed each time player state
