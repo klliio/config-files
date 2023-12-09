@@ -4,13 +4,13 @@
 # 			--[prev/next]
 # 			--[play/pause/toggle]
 
-if pgrep -x "ncmpcpp" > /dev/null; then
+if [ ! "$(mpc status %totaltime%)" = "0:00" ]; then
 	case "$1" in
-		--next) mpc next > /dev/null ; playerctl next;;
-		--prev) mpc prev > /dev/null ; playerctl previous;;
-		--play) mpc play > /dev/null ; playerctl play;;
-		--pause) mpc pause > /dev/null ; playerctl stop;;
-		--toggle) mpc toggle > /dev/null ; playerctl play-pause;;
+		--next) mpc next > /dev/null;;
+		--prev) mpc prev > /dev/null;;
+		--play) mpc play > /dev/null;;
+		--pause) mpc pause > /dev/null;;
+		--toggle) mpc toggle > /dev/null;;
 		*) exit 1 ;;
 	esac
 else
