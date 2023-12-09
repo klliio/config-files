@@ -47,8 +47,8 @@ colors:
         green: "#A6E3A1" # green
         yellow: "#F9E2AF" # yellow
         blue: "#89B4FA" # blue
-        magenta: "#F5C2E7" # pink
-        cyan: "#94E2D5" # mauve
+        magenta: "#cba6f7" # mauve
+        cyan: "#94E2D5" # teal
         white: "#BAC2DE" # subtext1
 
     # Bright colors
@@ -58,7 +58,7 @@ colors:
         green: "#A6E3A1" # green
         yellow: "#F9E2AF" # yellow
         blue: "#89B4FA" # blue
-        magenta: "#F5C2E7" # pink
+        magenta: "#cba6f7" # mauve
         cyan: "#94E2D5" # teal
         white: "#A6ADC8" # subtext0
 
@@ -69,7 +69,7 @@ colors:
         green: "#A6E3A1" # green
         yellow: "#F9E2AF" # yellow
         blue: "#89B4FA" # blue
-        magenta: "#F5C2E7" # pink
+        magenta: "#cba6f7" # mauve
         cyan: "#94E2D5" # teal
         white: "#BAC2DE" # subtext1
 
