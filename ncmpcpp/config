@@ -6,7 +6,7 @@ mpd_host = 127.0.0.1
 mpd_port = 6600
 mpd_connection_timeout = 5
 mpd_music_dir = /media/nas/Music
-mpd_crossfade_time = 5
+mpd_crossfade_time = 2
 
 ##### song format #####
 ##
@@ -358,11 +358,11 @@ mouse_support = no
 #
 #search_engine_default_search_mode = 1
 #
-#external_editor = nano
+external_editor = nvim
 #
 ## Note: set to yes if external editor is a console application.
 ##
-#use_console_editor = yes
+use_console_editor = yes
 #
 ##### colors definitions #####
 ##
@@ -393,6 +393,13 @@ mouse_support = no
 ## Note: due to technical limitations of older ncurses version, if 256 colors
 ## are used there is a possibility that you'll be able to use only colors with
 ## transparent background.
+#
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "Visualiser"
+visualizer_in_stereo = "no"
+visualizer_type = "spectrum"
+visualizer_look = "█┇"
+visualizer_spectrum_smooth_look = "no"
 #
 colors_enabled = yes
 #
