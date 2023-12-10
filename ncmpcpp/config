@@ -85,8 +85,8 @@ browser_sort_mode = name
 browser_sort_format = {%A - }{%t}|{%f} {%l}
 browser_playlist_prefix = "$2playlist$9 "
 
-current_item_prefix = $(white)$r
-current_item_suffix = $/r$(end)
+current_item_prefix = $(white)$b$r
+current_item_suffix = $/r$/b$(end)
 current_item_inactive_column_prefix = $(white)$r
 current_item_inactive_column_suffix = $/r$(end)
 
@@ -141,7 +141,7 @@ song_columns_list_format = (20)[white]{a} (6f)[green]{NE} (50)[white]{t|f:Title}
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-execute_on_song_change = "/home/klliio/.config/scripts/mpd-notification.sh"
+execute_on_song_change = "notify-send -a MPD "$(mpc -f %title% | head -n 1)" "$(mpc -f %albumartist%\ -\ %album% | head -n 1)""
 #
 ##
 ## Note: Custom command that will be executed each time player state
@@ -176,7 +176,7 @@ seek_time = 1
 
 volume_change_step = 2
 
-autocenter_mode = no
+autocenter_mode = yes
 
 centered_cursor = yes
 
