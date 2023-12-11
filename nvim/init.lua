@@ -5,7 +5,7 @@ vim.g.maplocalleader = ' '
 -- [[ Setting options ]]
 
 -- highlight current line
-vim.o.cursorline = true
+vim.o.cursorline = false
 
 -- keep cursor near centre
 vim.o.scrolloff = 20
@@ -290,8 +290,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'bash', 'cpp', 'lua', 'python', 'rust', 'tsx', 'typescript', 'arduino', 'ini', 'css', 'html',
-    'toml', 'yaml', 'json' },
+  ensure_installed = { 'c', 'bash', 'cpp', 'lua', 'python', 'rust' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = true,
@@ -416,14 +415,7 @@ local servers = {
   clangd = {},
   pyright = {},
   rust_analyzer = {},
-  tsserver = {},
-  taplo = {},
-  arduino_language_server = {},
-  cssls = {},
-  jsonls = {},
   bashls = {},
-  yamlls = {},
-  html = { filetypes = { 'html', 'twig', 'hbs' } },
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
