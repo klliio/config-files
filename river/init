@@ -102,6 +102,20 @@ riverctl map normal Super+Shift 0 set-view-tags $all_tags
 riverctl map normal Super F toggle-fullscreen
 riverctl map normal Super T toggle-float
 
+# scratchpad
+scratch_tag=$((1 << 20 ))
+
+# Toggle the scratchpad with Super+P
+riverctl map normal Super S toggle-focused-tags ${scratch_tag}
+
+# Send windows to the scratchpad with Super+Shift+P
+riverctl map normal Super+Shift S set-view-tags ${scratch_tag}
+
+# Set spawn tagmask to ensure new windows don't have the scratchpad tag unless
+# explicitly set.
+all_but_scratch_tag=$(( ((1 << 32) - 1) ^ $scratch_tag ))
+riverctl spawn-tagmask ${all_but_scratch_tag}
+
 # resizing
 riverctl declare-mode resize
 riverctl map normal Super+Shift R enter-mode resize
@@ -127,7 +141,6 @@ riverctl map resize Super+Control H snap left
 riverctl map resize Super+Control J snap down
 riverctl map resize Super+Control K snap up
 riverctl map resize Super+Control L snap right
-
 
 # focus the next/previous view in the layout stack
 riverctl map normal Super J focus-view next
