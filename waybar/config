@@ -32,8 +32,20 @@
 	},
 
 	"river/tags": {
-		"num-tags":9,
+		"num-tags":10,
 		"disable-click":false,
+		"tag-labels": [
+			"1",
+			"2",
+			"3",
+			"4",
+			"5",
+			"6",
+			"7",
+			"8",
+			"9",
+			"S",
+		],
 	},
 	"backlight": {
 		"device": "intel_backlight",
