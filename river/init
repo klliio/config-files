@@ -76,7 +76,8 @@ riverctl map normal Super E spawn '~/.config/scripts/file-editor.sh'
 riverctl map normal Super V spawn '~/.config/scripts/wireguard.sh'
 
 # workspaces/tags
-for i in $(seq 1 9)
+tagnum=9
+for i in $(seq 1 $tagnum)
 do
     tags=$((1 << ($i - 1)))
 
@@ -95,7 +96,7 @@ done
 
 # Super+0 to focus all tags
 # Super+Shift+0 to tag focused view with all tags
-all_tags=$(((1 << 32) - 1))
+all_tags=$(((1 << $tagnum) - 1))
 riverctl map normal Super 0 set-focused-tags $all_tags
 riverctl map normal Super+Shift 0 set-view-tags $all_tags
 
@@ -103,18 +104,18 @@ riverctl map normal Super F toggle-fullscreen
 riverctl map normal Super T toggle-float
 
 # scratchpad
-scratch_tag=$((1 << 20 ))
+scratch_tag=$((1 << $tagnum))
 
 # Toggle the scratchpad with Super+P
-riverctl map normal Super S toggle-focused-tags ${scratch_tag}
+riverctl map normal Super S toggle-focused-tags $scratch_tag
 
 # Send windows to the scratchpad with Super+Shift+P
-riverctl map normal Super+Shift S set-view-tags ${scratch_tag}
+riverctl map normal Super+Shift S set-view-tags $scratch_tag
 
 # Set spawn tagmask to ensure new windows don't have the scratchpad tag unless
 # explicitly set.
-all_but_scratch_tag=$(( ((1 << 32) - 1) ^ $scratch_tag ))
-riverctl spawn-tagmask ${all_but_scratch_tag}
+all_but_scratch_tag=$(( ((1 << $tagnum) - 1) ^ $scratch_tag ))
+riverctl spawn-tagmask $all_but_scratch_tag
 
 # resizing
 riverctl declare-mode resize
