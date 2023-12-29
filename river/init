@@ -13,8 +13,8 @@ pkill "mako"
 pkill "blueman-applet"
 pkill "mpd"
 pkill "syncthing"
-pkill "udisksd"
-pkill -f "/usr/libexec/polkit-gnome-authentication-agent-1 &"
+pkill "udiskie"
+pkill -f "/usr/libexec/polkit-gnome-authentication-agent-1"
 
 # 	easyeffects --gapplication-service &
 wbg ~/Images/apocalypse.png &
